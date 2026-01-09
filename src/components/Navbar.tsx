@@ -1,23 +1,47 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import ConnectWithCodeBuzzModal from "./ConnectWithCodeBuzzModal";
 
 export default function Navbar() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const pathname = usePathname();
+
+    const isActive = (path: string) => pathname === path;
 
     return (
-        <nav className="flex items-center justify-between px-8 py-4 bg-white">
-            <div className="text-2xl font-bold font-montserrat text-[#ff830a]">
+        <nav className="flex items-center justify-between px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
+            <Link href="/" className="text-2xl font-bold font-montserrat text-[#ff830a]">
                 CodeBuzz
-            </div>
+            </Link>
 
             <div className="hidden md:flex items-center gap-8 font-medium text-gray-800">
-                <Link href="#" className="hover:text-[#ff830a] transition-colors">Home</Link>
-                <Link href="#" className="hover:text-[#ff830a] transition-colors">Courses</Link>
-                <Link href="#" className="hover:text-[#ff830a] transition-colors">Features</Link>
-                <Link href="#" className="hover:text-[#ff830a] transition-colors">About Us</Link>
+                <Link
+                    href="/"
+                    className={`transition-colors ${isActive('/') ? 'text-[#ff830a] font-semibold' : 'hover:text-[#ff830a]'}`}
+                >
+                    Home
+                </Link>
+                <Link
+                    href="/courses"
+                    className={`transition-colors ${isActive('/courses') ? 'text-[#ff830a] font-semibold' : 'hover:text-[#ff830a]'}`}
+                >
+                    Courses
+                </Link>
+                <Link
+                    href="/#features"
+                    className="hover:text-[#ff830a] transition-colors"
+                >
+                    Features
+                </Link>
+                <Link
+                    href="/#about"
+                    className="hover:text-[#ff830a] transition-colors"
+                >
+                    About Us
+                </Link>
             </div>
 
             <div className="flex items-center gap-6">
