@@ -1,7 +1,13 @@
+"use client";
+
 import { Zap, Bot, Atom, Settings, Brain, Database } from "lucide-react";
 import HeroCard from "./ui/HeroCard";
+import { useState } from "react";
+import ConnectWithCodeBuzzModal from "./ConnectWithCodeBuzzModal";
 
 export default function Hero() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <section
             className="relative min-h-[calc(100vh-80px)] overflow-hidden flex items-center px-8 md:px-16 lg:px-24"
@@ -26,6 +32,7 @@ export default function Hero() {
 
                     <div className="flex flex-wrap gap-4">
                         <button
+                            onClick={() => setIsModalOpen(true)}
                             className="flex items-center gap-2 px-8 py-3.5 rounded-lg text-white font-semibold shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-1"
                             style={{
                                 background:
@@ -91,6 +98,11 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
+
+            <ConnectWithCodeBuzzModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+            />
         </section>
     );
 }
