@@ -37,8 +37,8 @@ export default function Navbar() {
                     Features
                 </Link>
                 <Link
-                    href="/#about"
-                    className="hover:text-[#ff830a] transition-colors"
+                    href="/about"
+                    className={`transition-colors ${isActive('/about') ? 'text-[#ff830a] font-semibold' : 'hover:text-[#ff830a]'}`}
                 >
                     About Us
                 </Link>

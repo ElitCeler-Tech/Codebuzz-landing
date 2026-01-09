@@ -8,6 +8,7 @@ import TeamSection from "@/components/TeamSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import StatsSection from "@/components/StatsSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <TestimonialsSection />
       <FAQSection />
       <CTASection />
+      <StatsSection />
       <Footer />
     </main>
   );

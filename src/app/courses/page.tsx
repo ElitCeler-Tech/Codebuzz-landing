@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CourseCard from "@/components/CourseCard";
 import ConnectWithCodeBuzzModal from "@/components/ConnectWithCodeBuzzModal";
+import CTASection from "@/components/CTASection";
 import { useState } from "react";
 
 const courses = [
@@ -76,6 +77,7 @@ export default function CoursesPage() {
                 </div>
             </section>
 
+            <CTASection />
             <Footer />
 
             <ConnectWithCodeBuzzModal
