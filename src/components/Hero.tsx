@@ -18,10 +18,10 @@ export default function Hero() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-7xl mx-auto items-center">
                 {/* Left Content */}
                 <div className="z-10">
-                    <h1 className="text-5xl md:text-6xl font-extrabold font-montserrat leading-tight text-gray-900 mb-2">
-                        Learn In-Demand
+                    <h1 className="text-4xl md:text-5xl font-extrabold font-montserrat leading-tight text-gray-900 mb-4">
+                        Everyone starts somewhere.
                         <br />
-                        Tech Skills.
+                        At CodeBuzz, we make sure you don’t start alone.
                     </h1>
                     <h2 className="text-5xl md:text-6xl font-extrabold font-montserrat leading-tight text-[#ff830a] mb-6">
                         Faster. Smarter. Better.

@@ -5,39 +5,55 @@ import { Plus, Minus } from "lucide-react";
 
 type FAQItem = {
     question: string;
-    answer: string;
+    answer: React.ReactNode;
 };
 
 const faqs: FAQItem[] = [
     {
-        question: "What is CodeBuzz?",
-        answer:
-            "CodeBuzz is a comprehensive learning platform designed to take you from a beginner to a pro in coding through structured courses, live mentorship, and real-world projects.",
+        question: "Do you guarantee jobs or placements?",
+        answer: (
+            <>
+                We don’t make unrealistic promises.
+                <br />
+                What we do provide is strong skill-building, real projects, and career guidance that genuinely improves readiness and confidence.
+            </>
+        ),
     },
     {
-        question: "When do I get access after enrolling?",
-        answer:
-            "You get instant access to your enrolled courses and features immediately after successful registration or payment.",
+        question: "How are classes conducted?",
+        answer: (
+            <>
+                Live, instructor-led sessions with:
+                <ul className="list-disc pl-5 mt-2 space-y-1">
+                    <li>Interactive discussions</li>
+                    <li>Real-time coding</li>
+                    <li>Project walkthroughs</li>
+                    <li>Access to recordings for revision</li>
+                </ul>
+            </>
+        ),
     },
     {
-        question: "Who can use CodeBuzz?",
-        answer:
-            "CodeBuzz is suitable for everyone â€” students, working professionals, and career switchers looking to build or upgrade their technical skills.",
-    },
-    {
-        question: "Can I learn at my own pace?",
-        answer:
-            "Yes! Our recorded lessons and flexible modules allow you to learn at your own pace, anytime and anywhere.",
-    },
-    {
-        question: "Do you offer live classes?",
-        answer:
-            "Absolutely. We offer live classes with industry experts where you can interact, ask questions, and solve doubts in real-time.",
+        question: "What kind of support do learners get?",
+        answer: (
+            <>
+                Learners receive:
+                <ul className="list-disc pl-5 mt-2 space-y-1">
+                    <li>Instructor guidance</li>
+                    <li>Mentorship sessions</li>
+                    <li>Doubt-clearing support</li>
+                    <li>Career direction advice</li>
+                </ul>
+                <p className="mt-4 font-semibold text-[#ff830a]">
+                    You’re never learning alone at CodeBuzz.
+                </p>
+            </>
+        ),
     },
 ];
 
 export default function FAQSection() {
-    const [openIndex, setOpenIndex] = useState<number | null>(1); // Defaulting 2nd item open as per image
+    const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     const toggleFAQ = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
@@ -59,8 +75,8 @@ export default function FAQSection() {
                             key={index}
                             onClick={() => toggleFAQ(index)}
                             className={`rounded-2xl cursor-pointer transition-all duration-300 ${isOpen
-                                    ? "bg-white border border-gray-200 shadow-sm"
-                                    : "bg-[#FFF2E5] border border-transparent hover:bg-[#ffeadd]"
+                                ? "bg-white border border-gray-200 shadow-sm"
+                                : "bg-[#FFF2E5] border border-transparent hover:bg-[#ffeadd]"
                                 }`}
                         >
                             <div
@@ -82,12 +98,12 @@ export default function FAQSection() {
                                 </div>
                             </div>
                             <div
-                                className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${isOpen ? "max-h-40" : "max-h-0"
+                                className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${isOpen ? "max-h-96" : "max-h-0"
                                     }`}
                             >
-                                <p className="px-6 md:px-8 pb-8 text-gray-500 font-poppins text-base leading-relaxed">
+                                <div className="px-6 md:px-8 pb-8 text-gray-500 font-poppins text-base leading-relaxed">
                                     {faq.answer}
-                                </p>
+                                </div>
                             </div>
                         </div>
                     );

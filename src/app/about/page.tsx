@@ -28,40 +28,63 @@ export default function AboutPage() {
                         "linear-gradient(105deg, #FFF2E9 27.57%, #FFD5A7 108.43%)",
                 }}
             >
-                <h1 className="text-4xl md:text-5xl font-bold text-[#ff830a] font-montserrat mb-4">
-                    About Us
+                <h1 className="text-4xl md:text-5xl font-bold text-[#ff830a] font-montserrat mb-4 tracking-wide uppercase">
+                    CodeBuzz — OUR STORY
                 </h1>
-                <p className="text-gray-600 font-poppins text-lg max-w-2xl leading-relaxed">
-                    Empowering learners with structured, industry-ready tech education.
+                <p className="text-gray-700 font-poppins text-lg md:text-2xl font-medium max-w-2xl leading-relaxed">
+                    Building Skills That Truly Matter
                 </p>
             </section>
 
             {/* Content Section */}
-            <section className="w-full max-w-5xl mx-auto px-4 py-20">
-                <div className="text-center mb-16">
-                    <p className="text-gray-600 font-poppins text-lg md:text-xl leading-loose max-w-4xl mx-auto">
-                        CodeBuzz is a modern tech learning platform designed to help learners
-                        build strong, job-ready skills with clarity and confidence. We focus
-                        on structured courses, expert-led instruction, and hands-on learning
-                        experiences that go beyond just watching videos.
+            <section className="w-full max-w-4xl mx-auto px-6 py-20">
+                <div className="flex flex-col gap-10 text-center md:text-left">
+                    <p className="text-gray-600 font-poppins text-lg leading-loose">
+                        CodeBuzz was created with one simple belief:
+                        <br />
+                        <span className="font-medium text-gray-800">
+                            learning technology should feel relevant, empowering, and connected to the real world.
+                        </span>
                     </p>
-                </div>
 
-                {/* Stats Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {stats.map((stat, index) => (
-                        <div
-                            key={index}
-                            className="bg-white rounded-2xl p-10 border border-gray-100 flex flex-col items-center justify-center text-center shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
-                        >
-                            <h3 className="text-4xl font-bold text-[#ff830a] mb-2 font-montserrat">
-                                {stat.value}
-                            </h3>
-                            <p className="text-gray-500 font-poppins font-medium text-lg">
-                                {stat.label}
-                            </p>
-                        </div>
-                    ))}
+                    <p className="text-gray-600 font-poppins text-lg leading-loose">
+                        Too often, learners are overwhelmed with random tools and outdated content.
+                        At CodeBuzz, we design clear learning paths guided by industry professionals
+                        who actively work in AI, Data, Cloud, and Software Engineering.
+                    </p>
+
+                    <div className="bg-[#FFF2E5] p-8 rounded-2xl border border-orange-100 shadow-sm">
+                        <h3 className="text-xl font-bold text-[#ff830a] mb-6 font-montserrat">
+                            We combine:
+                        </h3>
+                        <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                            <li className="flex flex-col items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ff830a]" />
+                                <span className="font-medium text-gray-800 font-poppins">Strong fundamentals</span>
+                            </li>
+                            <li className="flex flex-col items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ff830a]" />
+                                <span className="font-medium text-gray-800 font-poppins">Hands-on projects</span>
+                            </li>
+                            <li className="flex flex-col items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ff830a]" />
+                                <span className="font-medium text-gray-800 font-poppins">Career-aligned thinking</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p className="text-gray-700 font-poppins text-xl font-medium text-center italic">
+                        "So learners don’t just learn — they grow with confidence and direction."
+                    </p>
+
+                    <div className="text-center mt-4">
+                        <p className="text-gray-600 font-poppins text-lg">
+                            Our goal isn’t to rush you into a job.
+                        </p>
+                        <p className="text-[#ff830a] font-bold font-montserrat text-2xl mt-2">
+                            It’s to prepare you to build a successful career.
+                        </p>
+                    </div>
                 </div>
             </section>
 
