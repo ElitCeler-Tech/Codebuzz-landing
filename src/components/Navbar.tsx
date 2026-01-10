@@ -31,8 +31,8 @@ export default function Navbar() {
                     Courses
                 </Link>
                 <Link
-                    href="/#features"
-                    className="hover:text-[#ff830a] transition-colors"
+                    href="/features"
+                    className={`transition-colors ${isActive('/features') ? 'text-[#ff830a] font-semibold' : 'hover:text-[#ff830a]'}`}
                 >
                     Features
                 </Link>
@@ -45,7 +45,7 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center gap-6">
-                <Link href="#" className="font-medium text-[#ff830a] hover:opacity-80 transition-opacity">
+                <Link href="https://users.codebuzz.us" className="font-medium text-[#ff830a] hover:opacity-80 transition-opacity">
                     Sign In
                 </Link>
                 <button
