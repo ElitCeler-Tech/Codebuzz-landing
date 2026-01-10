@@ -9,20 +9,20 @@ import {
 
 const companiesRow1 = [
     { name: "Amazon", icon: ShoppingBag, isBox: false, imageSrc: "/logos/amazon.png" },
+    { name: "Microsoft", icon: Tv, isBox: false, imageSrc: "/logos/Microsoft.svg" },
     { name: "Hulu", icon: Tv, isBox: false, imageSrc: "/logos/Hulu.svg" },
-    { name: "Fintech", icon: TrendingUp, isBox: false },
+    { name: "Salesforce", icon: TrendingUp, isBox: false, imageSrc: "/logos/Salesforce.com" },
     { name: "Amazon", icon: ShoppingBag, isBox: false, imageSrc: "/logos/amazon.png" },
-    { name: "Hulu", icon: Tv, isBox: false, imageSrc: "/logos/Hulu.svg" },
-    { name: "Fintech", icon: TrendingUp, isBox: false },
+    { name: "Microsoft", icon: Tv, isBox: false, imageSrc: "/logos/Microsoft.svg" },
 ];
 
 const companiesRow2 = [
+    { name: "AT&T", icon: TrendingUp, isBox: false, imageSrc: "/logos/AT&T-L.svg" },
     { name: "Fintech", icon: TrendingUp, isBox: false },
+    { name: "Salesforce", icon: TrendingUp, isBox: false, imageSrc: "/logos/Salesforce.com" },
     { name: "Hulu", icon: Tv, isBox: false, imageSrc: "/logos/Hulu.svg" },
-    { name: "Amazon", icon: ShoppingBag, isBox: false, imageSrc: "/logos/amazon.png" },
+    { name: "AT&T", icon: TrendingUp, isBox: false, imageSrc: "/logos/AT&T-L.svg" },
     { name: "Fintech", icon: TrendingUp, isBox: false },
-    { name: "Hulu", icon: Tv, isBox: false, imageSrc: "/logos/Hulu.svg" },
-    { name: "Amazon", icon: ShoppingBag, isBox: false, imageSrc: "/logos/amazon.png" },
 ];
 
 const LogoCard = ({
@@ -37,9 +37,9 @@ const LogoCard = ({
     imageSrc?: string;
 }) => {
     return (
-        <div className="mx-4 flex items-center justify-center gap-2 rounded-lg bg-gray-100 px-8 py-4 min-w-[180px] h-[80px] hover:bg-gray-200 transition-colors">
+        <div className="mx-4 flex items-center justify-center gap-2 rounded-lg bg-gray-100 px-8 py-4 min-w-[200px] h-[100px] hover:bg-gray-200 transition-colors">
             {imageSrc ? (
-                <div className="relative h-10 w-32 flex items-center justify-center">
+                <div className="relative h-16 w-40 flex items-center justify-center">
                     <Image
                         src={imageSrc}
                         alt={name}
@@ -69,7 +69,7 @@ export default function InstructorsSection() {
         <section className="py-24 bg-white flex flex-col items-center overflow-hidden">
             <div className="text-center mb-16 max-w-3xl px-4">
                 <h2 className="text-4xl md:text-5xl font-bold font-montserrat text-gray-900 mb-4">
-                    Instructors from <span className="text-[#ff830a]">Amazon, Hulu, Fintech</span>
+                    Instructors from <span className="text-[#ff830a]">Top Companies</span>
                 </h2>
                 <p className="text-lg text-gray-600 font-poppins">
                     Learn directly from professionals shaping today&apos;s tech industry.
