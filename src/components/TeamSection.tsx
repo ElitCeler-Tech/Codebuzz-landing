@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight, ArrowLeft, User } from "lucide-react";
+import Image from "next/image";
 
 type TeamMember = {
     name: string;
@@ -10,24 +11,16 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
     {
-        name: "Devon Lane",
-        role: "CEO & Founder of CodeBuzz",
-        bgColor: "bg-[#d4f0d4]", // Light green
-    },
-    {
-        name: "Kristin Watson",
-        role: "UI Designer",
-        bgColor: "bg-[#e5dcf5]", // Light purple
-    },
-    {
-        name: "Jacob Jones",
-        role: "Product Designer",
+        name: "Saneetha Narla",
+        role: "Founder - Codebuzz",
         bgColor: "bg-[#ffe8b8]", // Light yellow/orange
+        image: "/teams/sneetal-narala.jpeg",
     },
     {
-        name: "Esther Howard",
-        role: "Front-end Developer",
+        name: "Siddharth pothukuchi",
+        role: "IIT bhilai/purdue university/AIML engineer @Fintech",
         bgColor: "bg-[#d4e4fa]", // Light blue
+        image: "/teams/siddharth-pothukuchi.jpeg",
     },
 ];
 
@@ -43,17 +36,25 @@ export default function TeamSection() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 max-w-7xl w-full mb-12">
+            <div className="flex flex-wrap justify-center gap-8 px-4 max-w-7xl w-full mb-12">
                 {teamMembers.map((member, index) => (
-                    <div key={index} className="flex flex-col gap-4 group cursor-pointer">
+                    <div key={index} className="flex flex-col gap-4 group cursor-pointer w-full md:w-72">
                         {/* Image Placeholder */}
                         <div
-                            className={`w-full aspect-[4/5] rounded-xl ${member.bgColor} flex items-end justify-center overflow-hidden transition-transform duration-300 group-hover:-translate-y-2`}
+                            className={`relative w-full aspect-[4/5] rounded-xl ${member.bgColor} flex items-end justify-center overflow-hidden transition-transform duration-300 group-hover:-translate-y-2`}
                         >
-                            {/* Using a generic placeholder illustration since we don't have the specific photos */}
-                            <div className="relative w-full h-full opacity-50 flex items-center justify-center">
-                                <User className="w-32 h-32 text-gray-600 opacity-20" />
-                            </div>
+                            {member.image ? (
+                                <Image
+                                    src={member.image}
+                                    alt={member.name}
+                                    fill
+                                    className="object-cover object-top"
+                                />
+                            ) : (
+                                <div className="relative w-full h-full opacity-50 flex items-center justify-center">
+                                    <User className="w-32 h-32 text-gray-600 opacity-20" />
+                                </div>
+                            )}
                         </div>
 
                         {/* Info */}

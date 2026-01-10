@@ -19,7 +19,7 @@ export default function Home() {
       <PyramidSection />
       <SupportSection />
       <InstructorsSection />
-      <DashboardSection />
+      {/* <DashboardSection /> */}
       <TeamSection />
       <TestimonialsSection />
       <FAQSection />

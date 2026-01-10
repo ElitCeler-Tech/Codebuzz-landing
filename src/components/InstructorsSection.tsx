@@ -1,48 +1,53 @@
 import React from "react";
+import Image from "next/image";
 import { Marquee } from "@/components/ui/marquee";
 import {
-    Box,
-    AudioWaveform,
-    Waves,
-    Triangle,
-    Aperture,
-    Circle,
-    Command,
-    Hexagon,
-    Layers,
-    Zap,
+    ShoppingBag,
+    Tv,
+    TrendingUp,
 } from "lucide-react";
 
 const companiesRow1 = [
-    { name: "LOGO IPSUM", icon: Box, isBox: true },
-    { name: "offmax", icon: AudioWaveform, isBox: false },
-    { name: "offmax", icon: Waves, isBox: false },
-    { name: "offmax", icon: Triangle, isBox: false },
-    { name: "logoipsum", icon: Aperture, isBox: false },
-    { name: "logoipsum", icon: Circle, isBox: false },
+    { name: "Amazon", icon: ShoppingBag, isBox: false, imageSrc: "/logos/amazon.png" },
+    { name: "Hulu", icon: Tv, isBox: false, imageSrc: "/logos/Hulu.svg" },
+    { name: "Fintech", icon: TrendingUp, isBox: false },
+    { name: "Amazon", icon: ShoppingBag, isBox: false, imageSrc: "/logos/amazon.png" },
+    { name: "Hulu", icon: Tv, isBox: false, imageSrc: "/logos/Hulu.svg" },
+    { name: "Fintech", icon: TrendingUp, isBox: false },
 ];
 
 const companiesRow2 = [
-    { name: "Logoipsum", icon: Command, isBox: true }, // Simulating the pill shape one
-    { name: "offmax", icon: Layers, isBox: false },
-    { name: "offmax", icon: Zap, isBox: false },
-    { name: "LOGO IPSUM", icon: Box, isBox: true },
-    { name: "LOGOIPSUM", icon: Hexagon, isBox: false },
-    { name: "Logoipsum", icon: Circle, isBox: false },
+    { name: "Fintech", icon: TrendingUp, isBox: false },
+    { name: "Hulu", icon: Tv, isBox: false, imageSrc: "/logos/Hulu.svg" },
+    { name: "Amazon", icon: ShoppingBag, isBox: false, imageSrc: "/logos/amazon.png" },
+    { name: "Fintech", icon: TrendingUp, isBox: false },
+    { name: "Hulu", icon: Tv, isBox: false, imageSrc: "/logos/Hulu.svg" },
+    { name: "Amazon", icon: ShoppingBag, isBox: false, imageSrc: "/logos/amazon.png" },
 ];
 
 const LogoCard = ({
     name,
     icon: Icon,
     isBox,
+    imageSrc,
 }: {
     name: string;
     icon: React.ElementType;
     isBox: boolean;
+    imageSrc?: string;
 }) => {
     return (
-        <div className="mx-4 flex items-center justify-center gap-2 rounded-lg bg-gray-100 px-8 py-4 min-w-[180px] hover:bg-gray-200 transition-colors">
-            {isBox ? (
+        <div className="mx-4 flex items-center justify-center gap-2 rounded-lg bg-gray-100 px-8 py-4 min-w-[180px] h-[80px] hover:bg-gray-200 transition-colors">
+            {imageSrc ? (
+                <div className="relative h-10 w-32 flex items-center justify-center">
+                    <Image
+                        src={imageSrc}
+                        alt={name}
+                        fill
+                        className="object-contain"
+                    />
+                </div>
+            ) : isBox ? (
                 <div className="flex items-center gap-2 border-2 border-gray-800 p-1 px-2 rounded-sm">
                     <Icon className="h-5 w-5 fill-current text-gray-800" />
                     <span className="font-bold text-gray-800 uppercase tracking-widest text-xs">
@@ -51,7 +56,7 @@ const LogoCard = ({
                 </div>
             ) : (
                 <>
-                    <Icon className="h-6 w-6 text-gray-700 fill-current" />
+                    <Icon className="h-6 w-6 text-gray-700" />
                     <span className="font-bold text-gray-700 text-lg">{name}</span>
                 </>
             )}
@@ -64,7 +69,7 @@ export default function InstructorsSection() {
         <section className="py-24 bg-white flex flex-col items-center overflow-hidden">
             <div className="text-center mb-16 max-w-3xl px-4">
                 <h2 className="text-4xl md:text-5xl font-bold font-montserrat text-gray-900 mb-4">
-                    Instructors from <span className="text-[#ff830a]">Top Companies</span>
+                    Instructors from <span className="text-[#ff830a]">Amazon, Hulu, Fintech</span>
                 </h2>
                 <p className="text-lg text-gray-600 font-poppins">
                     Learn directly from professionals shaping today&apos;s tech industry.
