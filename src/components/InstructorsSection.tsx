@@ -11,7 +11,7 @@ const companiesRow1 = [
     { name: "Amazon", icon: ShoppingBag, isBox: false, imageSrc: "/logos/amazon.png" },
     { name: "Microsoft", icon: Tv, isBox: false, imageSrc: "/logos/Microsoft.svg" },
     { name: "Hulu", icon: Tv, isBox: false, imageSrc: "/logos/Hulu.svg" },
-    { name: "Salesforce", icon: TrendingUp, isBox: false, imageSrc: "/logos/Salesforce.com" },
+    { name: "Salesforce", icon: TrendingUp, isBox: false, imageSrc: "/logos/Salesforce.svg" },
     { name: "Amazon", icon: ShoppingBag, isBox: false, imageSrc: "/logos/amazon.png" },
     { name: "Microsoft", icon: Tv, isBox: false, imageSrc: "/logos/Microsoft.svg" },
 ];
@@ -19,7 +19,7 @@ const companiesRow1 = [
 const companiesRow2 = [
     { name: "AT&T", icon: TrendingUp, isBox: false, imageSrc: "/logos/AT&T-L.svg" },
     { name: "Fintech", icon: TrendingUp, isBox: false },
-    { name: "Salesforce", icon: TrendingUp, isBox: false, imageSrc: "/logos/Salesforce.com" },
+    { name: "Salesforce", icon: TrendingUp, isBox: false, imageSrc: "/logos/Salesforce.svg" },
     { name: "Hulu", icon: Tv, isBox: false, imageSrc: "/logos/Hulu.svg" },
     { name: "AT&T", icon: TrendingUp, isBox: false, imageSrc: "/logos/AT&T-L.svg" },
     { name: "Fintech", icon: TrendingUp, isBox: false },
