@@ -13,7 +13,7 @@ const faqs: FAQItem[] = [
         question: "Do you guarantee jobs or placements?",
         answer: (
             <>
-                We don’t make unrealistic promises.
+                We don't make unrealistic promises.
                 <br />
                 What we do provide is strong skill-building, real projects, and career guidance that genuinely improves readiness and confidence.
             </>
@@ -45,7 +45,7 @@ const faqs: FAQItem[] = [
                     <li>Career direction advice</li>
                 </ul>
                 <p className="mt-4 font-semibold text-[#ff830a]">
-                    You’re never learning alone at CodeBuzz.
+                    You're never learning alone at CodeBuzz.
                 </p>
             </>
         ),
@@ -60,40 +60,40 @@ export default function FAQSection() {
     };
 
     return (
-        <section className="py-24 px-4 bg-white flex flex-col items-center">
-            <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold font-montserrat text-[#3D3D3D] mb-4">
+        <section className="py-12 md:py-24 px-4 bg-white flex flex-col items-center">
+            <div className="text-center mb-8 md:mb-16 px-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-[#3D3D3D] mb-4">
                     Frequently Asked Questions
                 </h2>
             </div>
 
-            <div className="w-full max-w-4xl flex flex-col gap-6">
+            <div className="w-full max-w-4xl flex flex-col gap-4 md:gap-6 px-2 sm:px-4">
                 {faqs.map((faq, index) => {
                     const isOpen = openIndex === index;
                     return (
                         <div
                             key={index}
                             onClick={() => toggleFAQ(index)}
-                            className={`rounded-2xl cursor-pointer transition-all duration-300 ${isOpen
+                            className={`rounded-xl md:rounded-2xl cursor-pointer transition-all duration-300 ${isOpen
                                 ? "bg-white border border-gray-200 shadow-sm"
                                 : "bg-[#FFF2E5] border border-transparent hover:bg-[#ffeadd]"
                                 }`}
                         >
                             <div
-                                className={`flex items-center justify-between p-6 md:p-8 ${isOpen ? "pb-4" : ""
+                                className={`flex items-center justify-between p-4 sm:p-6 md:p-8 ${isOpen ? "pb-2 sm:pb-3 md:pb-4" : ""
                                     }`}
                             >
                                 <h3
-                                    className={`text-lg md:text-xl font-medium font-poppins ${isOpen ? "text-[#ff830a]" : "text-[#4A4A4A]"
+                                    className={`text-base sm:text-lg md:text-xl font-medium font-poppins pr-4 ${isOpen ? "text-[#ff830a]" : "text-[#4A4A4A]"
                                         }`}
                                 >
                                     {faq.question}
                                 </h3>
-                                <div className={isOpen ? "text-[#ff830a]" : "text-[#4A4A4A]"}>
+                                <div className={`shrink-0 ${isOpen ? "text-[#ff830a]" : "text-[#4A4A4A]"}`}>
                                     {isOpen ? (
-                                        <Minus className="w-6 h-6" />
+                                        <Minus className="w-5 h-5 md:w-6 md:h-6" />
                                     ) : (
-                                        <Plus className="w-6 h-6" />
+                                        <Plus className="w-5 h-5 md:w-6 md:h-6" />
                                     )}
                                 </div>
                             </div>
@@ -101,7 +101,7 @@ export default function FAQSection() {
                                 className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${isOpen ? "max-h-96" : "max-h-0"
                                     }`}
                             >
-                                <div className="px-6 md:px-8 pb-8 text-gray-500 font-poppins text-base leading-relaxed">
+                                <div className="px-4 sm:px-6 md:px-8 pb-6 md:pb-8 text-gray-500 font-poppins text-sm md:text-base leading-relaxed">
                                     {faq.answer}
                                 </div>
                             </div>

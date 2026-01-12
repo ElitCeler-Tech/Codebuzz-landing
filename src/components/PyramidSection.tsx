@@ -3,17 +3,18 @@ import Image from "next/image";
 
 export default function PyramidSection() {
     return (
-        <section className="py-20 px-4 flex flex-col items-center bg-white">
-            <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold font-montserrat text-gray-900 mb-4">
+        <section className="py-12 md:py-20 px-4 flex flex-col items-center bg-white">
+            <div className="text-center mb-8 md:mb-16 px-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-gray-900 mb-4">
                     Why Choose <span className="text-[#ff830a]">CodeBuzz</span>
                 </h2>
-                <p className="text-lg text-gray-600 font-poppins">
+                <p className="text-base md:text-lg text-gray-600 font-poppins max-w-2xl mx-auto">
                     Experience effective, engaging AI/ML learning with proven methods
                 </p>
             </div>
 
-            <div className="w-full max-w-6xl px-4 flex flex-col items-center">
+            {/* Desktop Pyramid Layout */}
+            <div className="w-full max-w-6xl px-4 hidden md:flex flex-col items-center">
                 <div className="bg-[#99337e] text-white py-2 rounded-t-xl text-center w-[61%] mx-auto font-semibold text-lg z-30 relative shadow-md">
                     Layer 3 — Advanced AI (Expert)
                 </div>
@@ -204,6 +205,171 @@ export default function PyramidSection() {
                             <p className="text-sm md:text-base font-semibold text-gray-800">
                                 Git, Linux & Cloud Basics
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Mobile Stacked Cards Layout */}
+            <div className="w-full max-w-lg px-4 flex md:hidden flex-col gap-6">
+                {/* Layer 3 - Mobile */}
+                <div className="bg-[#fff0f9] rounded-2xl overflow-hidden shadow-md">
+                    <div className="bg-[#99337e] text-white py-3 px-4 text-center font-semibold text-sm sm:text-base">
+                        Layer 3 — Advanced AI (Expert)
+                    </div>
+                    <div className="p-6">
+                        <p className="font-poppins italic text-gray-800 text-center mb-6 text-sm">
+                            Build scalable, production-ready AI solutions.
+                        </p>
+                        <div className="grid grid-cols-3 gap-4">
+                            <div className="text-center flex flex-col items-center gap-2">
+                                <Image
+                                    src="/l3a.png"
+                                    alt="Generative AI"
+                                    width={50}
+                                    height={50}
+                                    className="object-contain"
+                                />
+                                <p className="text-xs font-semibold text-gray-800">
+                                    Generative AI & Agents
+                                </p>
+                            </div>
+                            <div className="text-center flex flex-col items-center gap-2">
+                                <Image
+                                    src="/l3b.png"
+                                    alt="Advanced Architectures"
+                                    width={50}
+                                    height={50}
+                                    className="object-contain"
+                                />
+                                <p className="text-xs font-semibold text-gray-800">
+                                    Advanced Architectures
+                                </p>
+                            </div>
+                            <div className="text-center flex flex-col items-center gap-2">
+                                <Image
+                                    src="/l3c.png"
+                                    alt="Multi-modal AI"
+                                    width={50}
+                                    height={50}
+                                    className="object-contain"
+                                />
+                                <p className="text-xs font-semibold text-gray-800">
+                                    Multi-modal AI
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Layer 2 - Mobile */}
+                <div className="bg-[#fff9ee] rounded-2xl overflow-hidden shadow-md">
+                    <div className="bg-[#ff830a] text-white py-3 px-4 text-center font-semibold text-sm sm:text-base">
+                        Layer 2 — Applied AI / ML (Intermediate)
+                    </div>
+                    <div className="p-6">
+                        <p className="font-poppins italic text-gray-800 text-center mb-6 text-sm">
+                            Apply ML concepts to real-world systems.
+                        </p>
+                        <div className="grid grid-cols-3 gap-4">
+                            <div className="text-center flex flex-col items-center gap-2">
+                                <Image
+                                    src="/l2a.png"
+                                    alt="ML Algorithms"
+                                    width={50}
+                                    height={50}
+                                    className="object-contain"
+                                />
+                                <p className="text-xs font-semibold text-gray-800">
+                                    ML Algorithms
+                                </p>
+                            </div>
+                            <div className="text-center flex flex-col items-center gap-2">
+                                <Image
+                                    src="/l2b.png"
+                                    alt="System Design"
+                                    width={50}
+                                    height={50}
+                                    className="object-contain"
+                                />
+                                <p className="text-xs font-semibold text-gray-800">
+                                    System Design
+                                </p>
+                            </div>
+                            <div className="text-center flex flex-col items-center gap-2">
+                                <Image
+                                    src="/l2c.png"
+                                    alt="MLOps"
+                                    width={50}
+                                    height={50}
+                                    className="object-contain"
+                                />
+                                <p className="text-xs font-semibold text-gray-800">
+                                    MLOps
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Layer 1 - Mobile */}
+                <div className="bg-[#ecfcff] rounded-2xl overflow-hidden shadow-md">
+                    <div className="bg-[#378c9f] text-white py-3 px-4 text-center font-semibold text-sm sm:text-base">
+                        Layer 1 — Core Skills (Foundation)
+                    </div>
+                    <div className="p-6">
+                        <p className="font-poppins italic text-gray-800 text-center mb-6 text-sm">
+                            Build strong programming fundamentals.
+                        </p>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="text-center flex flex-col items-center gap-2">
+                                <Image
+                                    src="/l1a.png"
+                                    alt="Python & SQL"
+                                    width={50}
+                                    height={50}
+                                    className="object-contain"
+                                />
+                                <p className="text-xs font-semibold text-gray-800">
+                                    Python & SQL
+                                </p>
+                            </div>
+                            <div className="text-center flex flex-col items-center gap-2">
+                                <Image
+                                    src="/l1b.png"
+                                    alt="Data Handling"
+                                    width={50}
+                                    height={50}
+                                    className="object-contain"
+                                />
+                                <p className="text-xs font-semibold text-gray-800">
+                                    Data Handling
+                                </p>
+                            </div>
+                            <div className="text-center flex flex-col items-center gap-2">
+                                <Image
+                                    src="/l1c.png"
+                                    alt="Math for ML"
+                                    width={50}
+                                    height={50}
+                                    className="object-contain"
+                                />
+                                <p className="text-xs font-semibold text-gray-800">
+                                    Math & Statistics
+                                </p>
+                            </div>
+                            <div className="text-center flex flex-col items-center gap-2">
+                                <Image
+                                    src="/l1d.png"
+                                    alt="Cloud Basics"
+                                    width={50}
+                                    height={50}
+                                    className="object-contain"
+                                />
+                                <p className="text-xs font-semibold text-gray-800">
+                                    Git, Linux & Cloud
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -76,7 +76,7 @@ export default function TestimonialsSection() {
 
     const scroll = (direction: "left" | "right") => {
         if (scrollContainerRef.current) {
-            const scrollAmount = 400; // Approximate card width + gap
+            const scrollAmount = 320; // Approximate card width + gap
             scrollContainerRef.current.scrollBy({
                 left: direction === "left" ? -scrollAmount : scrollAmount,
                 behavior: "smooth",
@@ -85,45 +85,45 @@ export default function TestimonialsSection() {
     };
 
     return (
-        <section className="py-24 bg-white overflow-hidden">
-            <div className="max-w-[90%] 2xl:max-w-[1600px] mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 px-4 max-w-6xl mx-auto w-full">
+        <section className="py-12 md:py-24 bg-white overflow-hidden">
+            <div className="max-w-[95%] sm:max-w-[90%] 2xl:max-w-[1600px] mx-auto">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-16 px-4 max-w-6xl mx-auto w-full gap-6">
                     <div className="max-w-2xl">
-                        <h2 className="text-4xl md:text-5xl font-bold font-montserrat text-gray-900 mb-6">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-gray-900 mb-4 md:mb-6">
                             What Our Learners Say
                         </h2>
-                        <p className="text-xl text-gray-400 font-poppins">
+                        <p className="text-base sm:text-lg md:text-xl text-gray-400 font-poppins">
                             Real experiences from students who are building their skills with
                             CodeBuzz.
                         </p>
                     </div>
 
-                    <div className="flex gap-4 mt-8 md:mt-0">
+                    <div className="flex gap-3 md:gap-4">
                         <button
                             onClick={() => scroll("left")}
-                            className="w-14 h-14 rounded-full bg-[#FFF2E5] flex items-center justify-center text-[#ff830a] hover:bg-orange-100 transition-colors"
+                            className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#FFF2E5] flex items-center justify-center text-[#ff830a] hover:bg-orange-100 transition-colors"
                         >
-                            <ArrowLeft className="w-6 h-6" />
+                            <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
                         </button>
                         <button
                             onClick={() => scroll("right")}
-                            className="w-14 h-14 rounded-full bg-[#ff830a] flex items-center justify-center text-white hover:bg-[#e07208] transition-colors shadow-md shadow-orange-200"
+                            className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#ff830a] flex items-center justify-center text-white hover:bg-[#e07208] transition-colors shadow-md shadow-orange-200"
                         >
-                            <ArrowRight className="w-6 h-6" />
+                            <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
                         </button>
                     </div>
                 </div>
                 <div
                     ref={scrollContainerRef}
-                    className="flex gap-6 overflow-x-auto pb-12 px-4 scrollbar-hide"
+                    className="flex gap-4 md:gap-6 overflow-x-auto pb-8 md:pb-12 px-4 scrollbar-hide"
                 >
                     {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
-                            className={`w-[320px] md:w-[380px] p-8 md:p-10 rounded-[2rem] ${testimonial.bgColor} flex flex-col gap-6 shrink-0 transition-transform hover:scale-[1.01]`}
+                            className={`w-[280px] sm:w-[320px] md:w-[380px] p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-[2rem] ${testimonial.bgColor} flex flex-col gap-4 md:gap-6 shrink-0 transition-transform hover:scale-[1.01]`}
                         >
-                            <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-200 shrink-0 relative">
+                            <div className="flex items-center gap-3 md:gap-4">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full overflow-hidden bg-gray-200 shrink-0 relative">
                                     <Image
                                         src={testimonial.avatar}
                                         alt={testimonial.name}
@@ -132,15 +132,15 @@ export default function TestimonialsSection() {
                                     />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-gray-900 font-montserrat text-lg">
+                                    <h3 className="font-bold text-gray-900 font-montserrat text-base md:text-lg">
                                         {testimonial.name}
                                     </h3>
-                                    <p className="text-sm text-gray-500 font-poppins">
+                                    <p className="text-xs md:text-sm text-gray-500 font-poppins">
                                         {testimonial.role}
                                     </p>
                                 </div>
                             </div>
-                            <p className="text-[#555555] leading-[1.8] font-poppins text-[15px]">
+                            <p className="text-[#555555] leading-relaxed md:leading-[1.8] font-poppins text-sm md:text-[15px]">
                                 &quot;{testimonial.text}&quot;
                             </p>
                         </div>

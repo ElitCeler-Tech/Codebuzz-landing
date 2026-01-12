@@ -4,27 +4,27 @@ import { MessageCircle, Users, MessageSquare } from "lucide-react";
 export default function SupportSection() {
     return (
         <section
-            className="py-20 px-4 flex flex-col items-center"
+            className="py-12 md:py-20 px-4 flex flex-col items-center"
             style={{
                 background: "linear-gradient(105deg, #FFF2E9 27.57%, #FFD5A7 108.43%)",
             }}
         >
-            <div className="text-center mb-16 max-w-4xl">
-                <h2 className="text-4xl font-semibold font-montserrat text-gray-900 mb-4">
+            <div className="text-center mb-8 md:mb-16 max-w-4xl px-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-montserrat text-gray-900 mb-4">
                     Learning Support <span className="text-[#ff830a]">24/7</span>
                 </h2>
-                <p className="text-lg text-[#555555] font-poppins">
+                <p className="text-base md:text-lg text-[#555555] font-poppins">
                     Get help whenever you need it — from mentors, support teams, and the
                     CodeBuzz community.
                 </p>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-12 w-full max-w-6xl mb-16">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 md:gap-12 w-full max-w-6xl mb-8 md:mb-16 px-4">
                 {/* Card 1: Mentor Support */}
-                <div className="bg-[#ffefe0] rounded-3xl p-10 flex flex-col items-center gap-6 w-full md:w-1/3 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="bg-transparent p-4 rounded-full">
+                <div className="bg-[#ffefe0] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-6 w-full sm:w-1/3 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="bg-transparent p-2 sm:p-4 rounded-full">
                         {/* Custom Icon Composition for Mentor */}
-                        <div className="relative w-20 h-20 text-[#ff830a]">
+                        <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#ff830a]">
                             <svg
                                 viewBox="0 0 24 24"
                                 fill="currentColor"
@@ -33,20 +33,20 @@ export default function SupportSection() {
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
                             </svg>
                             {/* Adding a bubble to make it look like 'mentor support' - simplistic approach */}
-                            <div className="absolute -top-2 -right-2 bg-white rounded-full p-1">
-                                <MessageSquare className="w-8 h-8 text-[#ff830a] fill-current" />
+                            <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 bg-white rounded-full p-0.5 sm:p-1">
+                                <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-[#ff830a] fill-current" />
                             </div>
                         </div>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-medium text-[#3D3D3D] font-poppins text-center">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-[#3D3D3D] font-poppins text-center">
                         Mentor Support
                     </h3>
                 </div>
 
                 {/* Card 2: Chat & Community */}
-                <div className="bg-[#ffefe0] rounded-3xl p-10 flex flex-col items-center gap-6 w-full md:w-1/3 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="bg-transparent p-4 rounded-full">
-                        <div className="w-20 h-20 text-[#ff830a]">
+                <div className="bg-[#ffefe0] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-6 w-full sm:w-1/3 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="bg-transparent p-2 sm:p-4 rounded-full">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#ff830a]">
                             <svg
                                 viewBox="0 0 24 24"
                                 fill="currentColor"
@@ -56,15 +56,15 @@ export default function SupportSection() {
                             </svg>
                         </div>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-medium text-[#3D3D3D] font-poppins text-center">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-[#3D3D3D] font-poppins text-center">
                         Chat & Community
                     </h3>
                 </div>
 
                 {/* Card 3: Whatsapp support */}
-                <div className="bg-[#ffefe0] rounded-3xl p-10 flex flex-col items-center gap-6 w-full md:w-1/3 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="bg-transparent p-4 rounded-full">
-                        <div className="w-20 h-20 text-[#25D366]">
+                <div className="bg-[#ffefe0] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-6 w-full sm:w-1/3 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="bg-transparent p-2 sm:p-4 rounded-full">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#25D366]">
                             {/* WhatsApp Icon SVG */}
                             <svg
                                 viewBox="0 0 448 512"
@@ -75,13 +75,13 @@ export default function SupportSection() {
                             </svg>
                         </div>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-medium text-[#3D3D3D] font-poppins text-center">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-[#3D3D3D] font-poppins text-center">
                         Whatsapp support
                     </h3>
                 </div>
             </div>
 
-            <button className="bg-[#ff830a] text-white font-medium py-3 px-8 rounded-lg text-lg hover:bg-[#e07208] transition-colors flex items-center gap-2 shadow-md">
+            <button className="bg-[#ff830a] text-white font-medium py-3 px-6 sm:px-8 rounded-lg text-base md:text-lg hover:bg-[#e07208] transition-colors flex items-center gap-2 shadow-md">
                 Talk To Support
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ export default function SupportSection() {
                     viewBox="0 0 24 24"
                     strokeWidth={2}
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="w-4 h-4 sm:w-5 sm:h-5"
                 >
                     <path
                         strokeLinecap="round"

@@ -10,30 +10,31 @@ export default function Hero() {
 
     return (
         <section
-            className="relative min-h-[calc(100vh-80px)] overflow-hidden flex items-center px-8 md:px-16 lg:px-24"
+            className="relative min-h-[calc(100vh-80px)] overflow-hidden flex items-center px-4 sm:px-8 md:px-16 lg:px-24 py-12 md:py-0"
             style={{
                 background: "linear-gradient(105deg, #FFF2E9 27.57%, #FFD5A7 108.43%)",
             }}
         >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-7xl mx-auto items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full max-w-7xl mx-auto items-center">
                 {/* Left Content */}
-                <div className="z-10">
-                    <h1 className="text-4xl md:text-5xl font-extrabold font-montserrat leading-tight text-gray-900 mb-4">
+                <div className="z-10 text-center lg:text-left">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-montserrat leading-tight text-gray-900 mb-4">
                         Everyone starts somewhere.
-                        <br />
-                        At CodeBuzz, we make sure you don’t start alone.
+                        <br className="hidden sm:block" />
+                        <span className="sm:hidden"> </span>
+                        At CodeBuzz, we make sure you don't start alone.
                     </h1>
-                    <h2 className="text-5xl md:text-6xl font-extrabold font-montserrat leading-tight text-[#ff830a] mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-montserrat leading-tight text-[#ff830a] mb-4 md:mb-6">
                         Faster. Smarter. Better.
                     </h2>
-                    <p className="text-lg text-gray-600 mb-10 font-poppins max-w-lg">
+                    <p className="text-base sm:text-lg text-gray-600 mb-8 md:mb-10 font-poppins max-w-lg mx-auto lg:mx-0">
                         Learn, Experiment, and Deploy with Confidence. Let's get started.
                     </p>
 
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
                         <button
                             onClick={() => setIsModalOpen(true)}
-                            className="flex items-center gap-2 px-8 py-3.5 rounded-lg text-white font-semibold shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-1"
+                            className="flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg text-white font-semibold shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-1"
                             style={{
                                 background:
                                     "linear-gradient(92.57deg, #FF830A -11.84%, #FF6700 100.76%)",
@@ -42,7 +43,7 @@ export default function Hero() {
                             <Zap size={20} fill="currentColor" />
                             Get Started For Free
                         </button>
-                        <button className="px-8 py-3.5 rounded-lg bg-white text-[#ff830a] font-semibold border border-[#ff830a] hover:bg-orange-50 transition-colors shadow-sm">
+                        <button className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-white text-[#ff830a] font-semibold border border-[#ff830a] hover:bg-orange-50 transition-colors shadow-sm">
                             Watch Demo
                         </button>
                     </div>

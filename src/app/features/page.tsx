@@ -53,22 +53,22 @@ export default function FeaturesPage() {
       <Navbar />
 
       <section
-        className="w-full py-24 px-4 flex flex-col items-center justify-center text-center relative z-10"
+        className="w-full py-12 sm:py-16 md:py-24 px-4 flex flex-col items-center justify-center text-center relative z-10"
         style={{
           background:
             "linear-gradient(105deg, #FFF2E9 27.57%, #FFD5A7 108.43%)",
         }}
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-[#ff830a] font-montserrat mb-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#ff830a] font-montserrat mb-4">
           Our Features
         </h1>
-        <p className="text-gray-600 font-poppins text-lg max-w-2xl leading-relaxed mx-auto">
+        <p className="text-gray-600 font-poppins text-base md:text-lg max-w-2xl leading-relaxed mx-auto px-4">
           Everything you need to learn faster, practice better, and grow with
           confidence.
         </p>
       </section>
 
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+      <div className="hidden sm:block absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <div className="absolute top-[400px] -right-80 w-[800px] h-[800px] border-[60px] border-[#FFF2E5] rounded-full" />
 
         {/* Mid Left */}
@@ -86,20 +86,20 @@ export default function FeaturesPage() {
       </div>
 
       {/* Features List */}
-      <div className="w-full max-w-7xl mx-auto px-4 py-12 relative z-10 flex flex-col gap-24">
+      <div className="w-full max-w-7xl mx-auto px-4 py-8 sm:py-12 relative z-10 flex flex-col gap-12 sm:gap-16 md:gap-24">
         {features.map((feature) => (
           <section key={feature.id} className="text-center">
-            <div className="mb-12 px-4">
-              <h2 className="text-3xl md:text-4xl font-semibold font-montserrat text-gray-900 mb-4">
+            <div className="mb-6 sm:mb-8 md:mb-12 px-2 sm:px-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold font-montserrat text-gray-900 mb-3 md:mb-4">
                 {feature.title}{" "}
                 <span className="text-[#ff830a]">{feature.highlight}</span>
               </h2>
-              <p className="text-lg text-gray-600 font-poppins max-w-4xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 font-poppins max-w-4xl mx-auto">
                 {feature.description}
               </p>
             </div>
 
-            <div className="relative w-full rounded-2xl overflow-hidden bg-white">
+            <div className="relative w-full rounded-xl md:rounded-2xl overflow-hidden bg-white shadow-sm">
               <Image
                 src={feature.image}
                 alt={`${feature.title} ${feature.highlight}`}
