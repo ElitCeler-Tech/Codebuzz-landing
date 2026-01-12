@@ -6,6 +6,7 @@ import CourseCard from "@/components/CourseCard";
 import ConnectWithCodeBuzzModal from "@/components/ConnectWithCodeBuzzModal";
 import CTASection from "@/components/CTASection";
 import { useState } from "react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/animations";
 
 const courses = [
     {
@@ -54,27 +55,32 @@ export default function CoursesPage() {
                     background: "linear-gradient(105deg, #FFF2E9 27.57%, #FFD5A7 108.43%)",
                 }}
             >
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#ff830a] font-montserrat mb-4">
-                    Our Courses
-                </h1>
-                <p className="text-gray-600 font-poppins text-base md:text-lg max-w-2xl leading-relaxed px-4">
-                    Explore our industry-focused courses. Contact us to get the complete
-                    curriculum and learning roadmap.
-                </p>
+                <FadeIn direction="up">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#ff830a] font-montserrat mb-4">
+                        Our Courses
+                    </h1>
+                </FadeIn>
+                <FadeIn delay={0.15} direction="up">
+                    <p className="text-gray-600 font-poppins text-base md:text-lg max-w-2xl leading-relaxed px-4">
+                        Explore our industry-focused courses. Contact us to get the complete
+                        curriculum and learning roadmap.
+                    </p>
+                </FadeIn>
             </section>
 
             {/* Courses Grid */}
             <section className="w-full max-w-7xl mx-auto px-4 py-8 sm:py-12 md:py-16">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                     {courses.map((course) => (
-                        <CourseCard
-                            key={course.id}
-                            imageSrc={course.image}
-                            title={course.title}
-                            onContactClick={() => setIsModalOpen(true)}
-                        />
+                        <StaggerItem key={course.id} direction="up">
+                            <CourseCard
+                                imageSrc={course.image}
+                                title={course.title}
+                                onContactClick={() => setIsModalOpen(true)}
+                            />
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
             </section>
 
             <CTASection />
@@ -87,3 +93,4 @@ export default function CoursesPage() {
         </main>
     );
 }
+
