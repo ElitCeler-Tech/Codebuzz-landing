@@ -13,13 +13,13 @@ type TeamMember = {
 const teamMembers: TeamMember[] = [
     {
         name: "Saneeta Narrlla",
-        role: "Founder & Technologist, CodeBuzz Data • Security • AI Education",
+        role: "Founder & Technologist, CodeBuzz • Security • AI Education",
         bgColor: "bg-[#ffe8b8]", // Light yellow/orange
         image: "/teams/sneetal-narala.jpeg",
     },
     {
         name: "Siddharth Pothukuchi",
-        role: "AI/ML Engineer | IIT Bhilai & Purdue University Graduate",
+        role: "AI/ML Engineer\nIIT Bhilai & Purdue University Graduate",
         bgColor: "bg-[#d4e4fa]", // Light blue
         image: "/teams/siddharth-pothukuchi.jpeg",
     },
@@ -66,7 +66,7 @@ export default function TeamSection() {
                                 <h3 className="text-lg md:text-xl font-bold text-gray-900 font-montserrat">
                                     {member.name}
                                 </h3>
-                                <p className="text-xs md:text-sm text-gray-500 font-poppins">
+                                <p className="text-xs md:text-sm text-gray-500 font-poppins whitespace-pre-line">
                                     {member.role}
                                 </p>
                             </div>

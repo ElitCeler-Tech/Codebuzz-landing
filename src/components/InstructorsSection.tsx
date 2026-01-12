@@ -98,7 +98,7 @@ export default function InstructorsSection() {
             </div>
 
             {/* Disclaimer */}
-            <p className="text-center text-[10px] sm:text-xs text-gray-200 font-poppins max-w-3xl mx-auto px-4 mt-6">
+            <p className="text-center text-[12px] text-gray-400 font-poppins max-w-3xl mx-auto px-4 mt-6">
                 Company logos are trademarks of their respective owners and are used to represent instructor or mentor professional experience. No endorsement or affiliation is implied.
             </p>
         </section>
