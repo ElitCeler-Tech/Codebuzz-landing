@@ -1,5 +1,6 @@
 import React from "react";
 import { MessageCircle, Users, MessageSquare } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "./ui/animations";
 
 export default function SupportSection() {
     return (
@@ -9,17 +10,19 @@ export default function SupportSection() {
                 background: "linear-gradient(105deg, #FFF2E9 27.57%, #FFD5A7 108.43%)",
             }}
         >
-            <div className="text-center mb-8 md:mb-16 max-w-4xl px-4">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-montserrat text-gray-900 mb-4">
-                    Learning Support <span className="text-[#ff830a]">24/7</span>
-                </h2>
-                <p className="text-base md:text-lg text-[#555555] font-poppins">
-                    Get help whenever you need it — from mentors, support teams, and the
-                    CodeBuzz community.
-                </p>
-            </div>
+            <FadeIn direction="up">
+                <div className="text-center mb-8 md:mb-16 max-w-4xl px-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-montserrat text-gray-900 mb-4">
+                        Learning Support <span className="text-[#ff830a]">24/7</span>
+                    </h2>
+                    <p className="text-base md:text-lg text-[#555555] font-poppins">
+                        Get help whenever you need it — from mentors, support teams, and the
+                        CodeBuzz community.
+                    </p>
+                </div>
+            </FadeIn>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 md:gap-12 w-full max-w-6xl mb-8 md:mb-16 px-4">
+            <StaggerContainer staggerDelay={0.15} className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 md:gap-12 w-full max-w-6xl mb-8 md:mb-16 px-4">
                 {/* Card 1: Mentor Support */}
                 <div className="bg-[#ffefe0] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-6 w-full sm:w-1/3 shadow-sm hover:shadow-md transition-shadow">
                     <div className="bg-transparent p-2 sm:p-4 rounded-full">
@@ -79,25 +82,27 @@ export default function SupportSection() {
                         Whatsapp support
                     </h3>
                 </div>
-            </div>
+            </StaggerContainer>
 
-            <button className="bg-[#ff830a] text-white font-medium py-3 px-6 sm:px-8 rounded-lg text-base md:text-lg hover:bg-[#e07208] transition-colors flex items-center gap-2 shadow-md">
-                Talk To Support
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
-                    stroke="currentColor"
-                    className="w-4 h-4 sm:w-5 sm:h-5"
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5l7.5 7.5-7.5 7.5M19.5 12H4.5"
-                    />
-                </svg>
-            </button>
+            <FadeIn delay={0.3} direction="up">
+                <button className="bg-[#ff830a] text-white font-medium py-3 px-6 sm:px-8 rounded-lg text-base md:text-lg hover:bg-[#e07208] transition-colors flex items-center gap-2 shadow-md">
+                    Talk To Support
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                        className="w-4 h-4 sm:w-5 sm:h-5"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M13.5 4.5l7.5 7.5-7.5 7.5M19.5 12H4.5"
+                        />
+                    </svg>
+                </button>
+            </FadeIn>
         </section>
     );
 }

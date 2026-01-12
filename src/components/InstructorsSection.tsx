@@ -6,6 +6,7 @@ import {
     Tv,
     TrendingUp,
 } from "lucide-react";
+import { FadeIn } from "./ui/animations";
 
 const companiesRow1 = [
     { name: "Amazon", icon: ShoppingBag, isBox: false, imageSrc: "/logos/amazon.png" },
@@ -67,14 +68,16 @@ const LogoCard = ({
 export default function InstructorsSection() {
     return (
         <section className="py-12 sm:py-16 md:py-24 bg-white flex flex-col items-center overflow-hidden">
-            <div className="text-center mb-8 sm:mb-12 md:mb-16 max-w-3xl px-4">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-gray-900 mb-4">
-                    Instructors from <span className="text-[#ff830a]">Top Companies</span>
-                </h2>
-                <p className="text-base md:text-lg text-gray-600 font-poppins">
-                    Learn directly from professionals shaping today&apos;s tech industry.
-                </p>
-            </div>
+            <FadeIn direction="up">
+                <div className="text-center mb-8 sm:mb-12 md:mb-16 max-w-3xl px-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-gray-900 mb-4">
+                        Instructors from <span className="text-[#ff830a]">Top Companies</span>
+                    </h2>
+                    <p className="text-base md:text-lg text-gray-600 font-poppins">
+                        Learn directly from professionals shaping today&apos;s tech industry.
+                    </p>
+                </div>
+            </FadeIn>
 
             <div className="w-full relative">
                 <Marquee className="[--duration:40s] mb-4 sm:mb-8" pauseOnHover>

@@ -1,17 +1,20 @@
 import React from "react";
 import Image from "next/image";
+import { FadeIn, StaggerContainer, StaggerItem } from "./ui/animations";
 
 export default function PyramidSection() {
     return (
         <section className="py-12 md:py-20 px-4 flex flex-col items-center bg-white">
-            <div className="text-center mb-8 md:mb-16 px-4">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-gray-900 mb-4">
-                    Why Choose <span className="text-[#ff830a]">CodeBuzz</span>
-                </h2>
-                <p className="text-base md:text-lg text-gray-600 font-poppins max-w-2xl mx-auto">
-                    Experience effective, engaging AI/ML learning with proven methods
-                </p>
-            </div>
+            <FadeIn direction="up">
+                <div className="text-center mb-8 md:mb-16 px-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-gray-900 mb-4">
+                        Why Choose <span className="text-[#ff830a]">CodeBuzz</span>
+                    </h2>
+                    <p className="text-base md:text-lg text-gray-600 font-poppins max-w-2xl mx-auto">
+                        Experience effective, engaging AI/ML learning with proven methods
+                    </p>
+                </div>
+            </FadeIn>
 
             {/* Desktop Pyramid Layout */}
             <div className="w-full max-w-6xl px-4 hidden md:flex flex-col items-center">

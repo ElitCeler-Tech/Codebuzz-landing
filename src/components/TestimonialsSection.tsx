@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { FadeIn } from "./ui/animations";
 
 type Testimonial = {
     name: string;
@@ -87,32 +88,34 @@ export default function TestimonialsSection() {
     return (
         <section className="py-12 md:py-24 bg-white overflow-hidden">
             <div className="max-w-[95%] sm:max-w-[90%] 2xl:max-w-[1600px] mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-16 px-4 max-w-6xl mx-auto w-full gap-6">
-                    <div className="max-w-2xl">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-gray-900 mb-4 md:mb-6">
-                            What Our Learners Say
-                        </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-gray-400 font-poppins">
-                            Real experiences from students who are building their skills with
-                            CodeBuzz.
-                        </p>
-                    </div>
+                <FadeIn direction="up">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-16 px-4 max-w-6xl mx-auto w-full gap-6">
+                        <div className="max-w-2xl">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-gray-900 mb-4 md:mb-6">
+                                What Our Learners Say
+                            </h2>
+                            <p className="text-base sm:text-lg md:text-xl text-gray-400 font-poppins">
+                                Real experiences from students who are building their skills with
+                                CodeBuzz.
+                            </p>
+                        </div>
 
-                    <div className="flex gap-3 md:gap-4">
-                        <button
-                            onClick={() => scroll("left")}
-                            className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#FFF2E5] flex items-center justify-center text-[#ff830a] hover:bg-orange-100 transition-colors"
-                        >
-                            <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
-                        </button>
-                        <button
-                            onClick={() => scroll("right")}
-                            className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#ff830a] flex items-center justify-center text-white hover:bg-[#e07208] transition-colors shadow-md shadow-orange-200"
-                        >
-                            <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
-                        </button>
+                        <div className="flex gap-3 md:gap-4">
+                            <button
+                                onClick={() => scroll("left")}
+                                className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#FFF2E5] flex items-center justify-center text-[#ff830a] hover:bg-orange-100 transition-colors"
+                            >
+                                <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
+                            </button>
+                            <button
+                                onClick={() => scroll("right")}
+                                className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#ff830a] flex items-center justify-center text-white hover:bg-[#e07208] transition-colors shadow-md shadow-orange-200"
+                            >
+                                <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </FadeIn>
                 <div
                     ref={scrollContainerRef}
                     className="flex gap-4 md:gap-6 overflow-x-auto pb-8 md:pb-12 px-4 scrollbar-hide"
