@@ -25,26 +25,32 @@ const HeroCard = ({
     return (
         <motion.div
             className={`absolute bg-white py-10 rounded-3xl shadow-[0px_2.59px_11px_0px_#00000040] border border-orange-100 flex flex-col items-center text-center w-60 ${className}`}
-            initial={{ y: 0 }}
+            initial={{ y: 0, scale: 1 }}
             animate={{
                 y: [0, -12, 0, 8, 0],
+                scale: 1,
             }}
             transition={{
-                duration: floatDuration,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "easeInOut",
-                delay: floatDelay,
+                y: {
+                    duration: floatDuration,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    ease: "easeInOut",
+                    delay: floatDelay,
+                },
+                scale: {
+                    duration: 0.3,
+                    ease: "easeOut",
+                },
             }}
             whileHover={{
-                scale: 1.08,
-                transition: { duration: 0.2 },
+                scale: 1.05,
             }}
         >
             <motion.div
                 className="absolute -top-4 -right-4 bg-[#ff830a] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg shadow-md"
                 animate={{
-                    scale: [1, 1.1, 1],
+                    scale: [1, 1.08, 1],
                 }}
                 transition={{
                     duration: 2,
@@ -63,4 +69,3 @@ const HeroCard = ({
 };
 
 export default HeroCard;
-

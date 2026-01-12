@@ -85,7 +85,7 @@ export default function Hero() {
                             title="AI product manager"
                             subtitle="Analyze & predict"
                             number={3}
-                            className="bottom-34 right-5 z-30"
+                            className="bottom-34 -right-12 z-30"
                         />
 
                         {/* Card 4: ML Ops */}
