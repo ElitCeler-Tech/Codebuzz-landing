@@ -47,7 +47,12 @@ export default function SupportSection() {
                 </div>
 
                 {/* Card 2: Chat & Community */}
-                <div className="bg-[#ffefe0] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-6 w-full sm:w-1/3 shadow-sm hover:shadow-md transition-shadow">
+                <a
+                    href="https://chat.whatsapp.com/Eno44GYSrff8gMZOah9CP8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#ffefe0] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-6 w-full sm:w-1/3 shadow-sm hover:shadow-md transition-all hover:scale-[1.02] cursor-pointer"
+                >
                     <div className="bg-transparent p-2 sm:p-4 rounded-full">
                         <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#ff830a]">
                             <svg
@@ -62,10 +67,15 @@ export default function SupportSection() {
                     <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-[#3D3D3D] font-poppins text-center">
                         Chat & Community
                     </h3>
-                </div>
+                </a>
 
                 {/* Card 3: Whatsapp support */}
-                <div className="bg-[#ffefe0] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-6 w-full sm:w-1/3 shadow-sm hover:shadow-md transition-shadow">
+                <a
+                    href="https://chat.whatsapp.com/Eno44GYSrff8gMZOah9CP8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#ffefe0] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-6 w-full sm:w-1/3 shadow-sm hover:shadow-md transition-all hover:scale-[1.02] cursor-pointer"
+                >
                     <div className="bg-transparent p-2 sm:p-4 rounded-full">
                         <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#25D366]">
                             {/* WhatsApp Icon SVG */}
@@ -81,7 +91,7 @@ export default function SupportSection() {
                     <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-[#3D3D3D] font-poppins text-center">
                         Whatsapp support
                     </h3>
-                </div>
+                </a>
             </StaggerContainer>
 
             <FadeIn delay={0.3} direction="up">
