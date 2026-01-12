@@ -7,6 +7,7 @@ import ConnectWithCodeBuzzModal from "@/components/ConnectWithCodeBuzzModal";
 import CTASection from "@/components/CTASection";
 import Image from "next/image";
 import { useState } from "react";
+import { FadeIn } from "@/components/ui/animations";
 
 // Feature data to map through and render sections
 // Using available images as placeholders where appropriate.
@@ -59,13 +60,17 @@ export default function FeaturesPage() {
             "linear-gradient(105deg, #FFF2E9 27.57%, #FFD5A7 108.43%)",
         }}
       >
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#ff830a] font-montserrat mb-4">
-          Our Features
-        </h1>
-        <p className="text-gray-600 font-poppins text-base md:text-lg max-w-2xl leading-relaxed mx-auto px-4">
-          Everything you need to learn faster, practice better, and grow with
-          confidence.
-        </p>
+        <FadeIn direction="up">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#ff830a] font-montserrat mb-4">
+            Our Features
+          </h1>
+        </FadeIn>
+        <FadeIn delay={0.15} direction="up">
+          <p className="text-gray-600 font-poppins text-base md:text-lg max-w-2xl leading-relaxed mx-auto px-4">
+            Everything you need to learn faster, practice better, and grow with
+            confidence.
+          </p>
+        </FadeIn>
       </section>
 
       <div className="hidden sm:block absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
@@ -87,28 +92,30 @@ export default function FeaturesPage() {
 
       {/* Features List */}
       <div className="w-full max-w-7xl mx-auto px-4 py-8 sm:py-12 relative z-10 flex flex-col gap-12 sm:gap-16 md:gap-24">
-        {features.map((feature) => (
-          <section key={feature.id} className="text-center">
-            <div className="mb-6 sm:mb-8 md:mb-12 px-2 sm:px-4">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold font-montserrat text-gray-900 mb-3 md:mb-4">
-                {feature.title}{" "}
-                <span className="text-[#ff830a]">{feature.highlight}</span>
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 font-poppins max-w-4xl mx-auto">
-                {feature.description}
-              </p>
-            </div>
+        {features.map((feature, index) => (
+          <FadeIn key={feature.id} delay={index * 0.1} direction="up">
+            <section className="text-center">
+              <div className="mb-6 sm:mb-8 md:mb-12 px-2 sm:px-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold font-montserrat text-gray-900 mb-3 md:mb-4">
+                  {feature.title}{" "}
+                  <span className="text-[#ff830a]">{feature.highlight}</span>
+                </h2>
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 font-poppins max-w-4xl mx-auto">
+                  {feature.description}
+                </p>
+              </div>
 
-            <div className="relative w-full rounded-xl md:rounded-2xl overflow-hidden bg-white shadow-sm">
-              <Image
-                src={feature.image}
-                alt={`${feature.title} ${feature.highlight}`}
-                width={1400}
-                height={900}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </section>
+              <div className="relative w-full rounded-xl md:rounded-2xl overflow-hidden bg-white shadow-sm">
+                <Image
+                  src={feature.image}
+                  alt={`${feature.title} ${feature.highlight}`}
+                  width={1400}
+                  height={900}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </section>
+          </FadeIn>
         ))}
       </div>
 
@@ -122,3 +129,4 @@ export default function FeaturesPage() {
     </main>
   );
 }
+
