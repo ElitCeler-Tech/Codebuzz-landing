@@ -13,7 +13,7 @@ type TeamMember = {
 const teamMembers: TeamMember[] = [
     {
         name: "Saneeta Narrlla",
-        role: "Founder & Technologist, CodeBuzz • Data Security • AI Education",
+        role: "Founder & Technologist, CodeBuzz\nData • Security • AI Education",
         bgColor: "bg-[#ffe8b8]", // Light yellow/orange
         image: "/teams/sneetal-narala.jpeg",
     },
