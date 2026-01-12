@@ -95,7 +95,12 @@ export default function SupportSection() {
             </StaggerContainer>
 
             <FadeIn delay={0.3} direction="up">
-                <button className="bg-[#ff830a] text-white font-medium py-3 px-6 sm:px-8 rounded-lg text-base md:text-lg hover:bg-[#e07208] transition-colors flex items-center gap-2 shadow-md">
+                <a
+                    href="https://chat.whatsapp.com/Eno44GYSrff8gMZOah9CP8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#ff830a] text-white font-medium py-3 px-6 sm:px-8 rounded-lg text-base md:text-lg hover:bg-[#e07208] transition-colors flex items-center gap-2 shadow-md"
+                >
                     Talk To Support
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +116,7 @@ export default function SupportSection() {
                             d="M13.5 4.5l7.5 7.5-7.5 7.5M19.5 12H4.5"
                         />
                     </svg>
-                </button>
+                </a>
             </FadeIn>
         </section>
     );
