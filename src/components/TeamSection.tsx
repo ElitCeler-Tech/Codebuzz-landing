@@ -12,14 +12,14 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
     {
-        name: "Saneetha Narla",
-        role: "Founder - Codebuzz",
+        name: "Saneeta Narrlla",
+        role: "Founder & Technologist, CodeBuzz Data • Security • AI Education",
         bgColor: "bg-[#ffe8b8]", // Light yellow/orange
         image: "/teams/sneetal-narala.jpeg",
     },
     {
-        name: "Siddharth pothukuchi",
-        role: "IIT bhilai/purdue university/AIML engineer @Fintech",
+        name: "Siddharth Pothukuchi",
+        role: "AI/ML Engineer | IIT Bhilai & Purdue University Graduate",
         bgColor: "bg-[#d4e4fa]", // Light blue
         image: "/teams/siddharth-pothukuchi.jpeg",
     },
