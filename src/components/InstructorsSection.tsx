@@ -71,7 +71,7 @@ export default function InstructorsSection() {
             <FadeIn direction="up">
                 <div className="text-center mb-8 sm:mb-12 md:mb-16 max-w-3xl px-4">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-gray-900 mb-4">
-                        Instructors from <span className="text-[#ff830a]">Top Companies</span>
+                        Instructors and Mentors from <span className="text-[#ff830a]">Top Companies</span>
                     </h2>
                     <p className="text-base md:text-lg text-gray-600 font-poppins">
                         Learn directly from professionals shaping today&apos;s tech industry.
@@ -96,6 +96,11 @@ export default function InstructorsSection() {
                 <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 sm:w-1/4 md:w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
                 <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 sm:w-1/4 md:w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
             </div>
+
+            {/* Disclaimer */}
+            <p className="text-center text-[10px] sm:text-xs text-gray-200 font-poppins max-w-3xl mx-auto px-4 mt-6">
+                Company logos are trademarks of their respective owners and are used to represent instructor or mentor professional experience. No endorsement or affiliation is implied.
+            </p>
         </section>
     );
 }
