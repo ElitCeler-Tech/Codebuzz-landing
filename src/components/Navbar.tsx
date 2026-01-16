@@ -16,6 +16,8 @@ export default function Navbar() {
     const navLinks = [
         { href: "/", label: "Home" },
         { href: "/courses", label: "Courses" },
+        { href: "/resources", label: "Resources" },
+        { href: "/mentors", label: "Mentors" },
         { href: "/features", label: "Features" },
         { href: "/about", label: "About Us" },
     ];
@@ -101,8 +103,8 @@ export default function Navbar() {
                                 href={link.href}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className={`px-6 py-4 font-medium transition-colors ${isActive(link.href)
-                                        ? 'text-[#ff830a] bg-orange-50 font-semibold'
-                                        : 'text-gray-800 hover:text-[#ff830a] hover:bg-gray-50'
+                                    ? 'text-[#ff830a] bg-orange-50 font-semibold'
+                                    : 'text-gray-800 hover:text-[#ff830a] hover:bg-gray-50'
                                     }`}
                             >
                                 {link.label}

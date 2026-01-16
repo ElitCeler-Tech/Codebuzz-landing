@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { MessageCircle, Users, MessageSquare } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "./ui/animations";
 
@@ -24,7 +25,7 @@ export default function SupportSection() {
 
             <StaggerContainer staggerDelay={0.15} className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 md:gap-12 w-full max-w-6xl mb-8 md:mb-16 px-4">
                 {/* Card 1: Mentor Support */}
-                <div className="bg-[#ffefe0] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-6 w-full sm:w-1/3 shadow-sm hover:shadow-md transition-shadow">
+                <Link href="/mentors" className="bg-[#ffefe0] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-6 w-full sm:w-1/3 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
                     <div className="bg-transparent p-2 sm:p-4 rounded-full">
                         {/* Custom Icon Composition for Mentor */}
                         <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#ff830a]">
@@ -44,7 +45,7 @@ export default function SupportSection() {
                     <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-[#3D3D3D] font-poppins text-center">
                         Mentor Support
                     </h3>
-                </div>
+                </Link>
 
                 {/* Card 2: Chat & Community */}
                 <a
