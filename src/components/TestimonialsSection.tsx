@@ -36,6 +36,13 @@ const testimonials: Testimonial[] = [
         avatar: "https://i.pravatar.cc/150?u=fiona",
     },
     {
+        name: "Ria Manek",
+        role: "Software Developer",
+        text: "CodeBuzz didn't just teach me concepts — it built my confidence. The combination of video lessons, assessments, and progress tracking made learning feel purposeful. I now feel prepared to apply my skills in real projects.",
+        bgColor: "bg-[#f2f0ff]", // Light purple
+        avatar: "/reveiw/ria.png",
+    },
+    {
         name: "Jacob Jones",
         role: "Product Designer",
         text: "The community features are a game changer. Being able to discuss problems with peers and mentors in real-time helped me unblock myself quickly. The collaborative environment is unmatched.",
