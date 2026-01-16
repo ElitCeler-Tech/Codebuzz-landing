@@ -10,13 +10,6 @@ import { FadeIn } from "@/components/ui/animations";
 export default function AboutPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const stats = [
-        { value: "500", label: "Students Trained" },
-        { value: "200", label: "Expert Courses" },
-        { value: "95", label: "Success Rate" },
-        { value: "24", label: "Support available" },
-    ];
-
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
@@ -86,17 +79,17 @@ export default function AboutPage() {
 
                     <FadeIn delay={0.3} direction="up">
                         <p className="text-gray-700 font-poppins text-base sm:text-lg md:text-xl font-medium text-center italic px-4">
-                            "So learners don't just learn — they grow with confidence and direction."
+                            &quot;So learners don&apos;t just learn — they grow with confidence and direction.&quot;
                         </p>
                     </FadeIn>
 
                     <FadeIn delay={0.4} direction="up">
                         <div className="text-center mt-2 sm:mt-4">
                             <p className="text-gray-600 font-poppins text-base sm:text-lg">
-                                Our goal isn't to rush you into a job.
+                                Our goal isn&apos;t to rush you into a job.
                             </p>
                             <p className="text-[#ff830a] font-bold font-montserrat text-xl sm:text-2xl mt-2">
-                                It's to prepare you to build a successful career.
+                                It&apos;s to prepare you to build a successful career.
                             </p>
                         </div>
                     </FadeIn>

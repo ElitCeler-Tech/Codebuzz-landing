@@ -14,7 +14,7 @@ const faqs: FAQItem[] = [
         question: "Do you guarantee jobs or placements?",
         answer: (
             <>
-                We don't make unrealistic promises.
+                We don&apos;t make unrealistic promises.
                 <br />
                 What we do provide is strong skill-building, real projects, and career guidance that genuinely improves readiness and confidence.
             </>
@@ -46,7 +46,7 @@ const faqs: FAQItem[] = [
                     <li>Career direction advice</li>
                 </ul>
                 <p className="mt-4 font-semibold text-[#ff830a]">
-                    You're never learning alone at CodeBuzz.
+                    You&apos;re never learning alone at CodeBuzz.
                 </p>
             </>
         ),
