@@ -19,11 +19,11 @@ const companiesRow1 = [
 
 const companiesRow2 = [
     { name: "AT&T", icon: TrendingUp, isBox: false, imageSrc: "/logos/AT&T-L.svg" },
-    { name: "Fintech", icon: TrendingUp, isBox: false },
+    { name: "TransUnion", icon: TrendingUp, isBox: false, imageSrc: "/logos/transunino.svg" },
     { name: "Salesforce", icon: TrendingUp, isBox: false, imageSrc: "/logos/Salesforce.svg" },
     { name: "Hulu", icon: Tv, isBox: false, imageSrc: "/logos/Hulu.svg" },
     { name: "AT&T", icon: TrendingUp, isBox: false, imageSrc: "/logos/AT&T-L.svg" },
-    { name: "Fintech", icon: TrendingUp, isBox: false },
+    { name: "TransUnion", icon: TrendingUp, isBox: false, imageSrc: "/logos/transunino.svg" },
 ];
 
 const LogoCard = ({

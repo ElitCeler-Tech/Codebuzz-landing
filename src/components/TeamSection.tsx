@@ -15,13 +15,31 @@ const teamMembers: TeamMember[] = [
         name: "Saneeta Narrlla",
         role: "Founder & Technologist, CodeBuzz\nData • Security • AI Education",
         bgColor: "bg-[#ffe8b8]", // Light yellow/orange
-        image: "/teams/sneetal-narala.jpeg",
+        image: "/teams/Saneetapic.png",
     },
     {
         name: "Siddharth Pothukuchi",
         role: "AI/ML Engineer\nIIT Bhilai & Purdue University Graduate",
         bgColor: "bg-[#d4e4fa]", // Light blue
         image: "/teams/siddharth-pothukuchi.jpeg",
+    },
+    {
+        name: "Ravi Doddasomayajula",
+        role: "Tech Lead & Mentor\nSenior Software Engineer",
+        bgColor: "bg-[#e8f5e9]", // Light green
+        image: "/teams/Ravi_sir.jpeg",
+    },
+    {
+        name: "Dilip Yeluguri",
+        role: "Data and Finance@CodeBuzz",
+        bgColor: "bg-[#fce4ec]", // Light pink
+        image: "/teams/DilipY.jpeg",
+    },
+    {
+        name: "Vijay Chakilam",
+        role: "Founder@Kooper\nUniversity of Cincinnati MS Quantitative Analysis",
+        bgColor: "bg-[#e3f2fd]", // Light blue
+        image: "/teams/vijay_chakilam.jpeg",
     },
 ];
 

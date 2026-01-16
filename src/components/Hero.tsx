@@ -60,50 +60,50 @@ export default function Hero() {
 
                 {/* Right Content - Cards Stack */}
                 <FadeIn delay={0.3} direction="right" className="relative h-[700px] w-full hidden lg:flex items-center justify-center">
-                    <div className="relative w-[600px] h-[600px]">
-                        {/* Card 1: AI Engineer */}
+                    <div className="relative w-[650px] h-[650px]">
+                        {/* Card 1: AI Engineer - Top Center */}
                         <HeroCard
                             icon={<Bot size={48} />}
                             title="AI Engineer"
                             subtitle="Build real systems"
                             number={1}
-                            className="top-0 left-60 -translate-x-1/2 z-10"
+                            className="top-0 left-1/2 -translate-x-1/2 z-10"
                         />
 
-                        {/* Card 2: Data Scientist */}
+                        {/* Card 2: Data Scientist - Right Upper */}
                         <HeroCard
                             icon={<Atom size={48} />}
                             title="Data Scientist"
                             subtitle="Analyse complex data"
                             number={2}
-                            className="top-24 right-10 z-20"
+                            className="top-[190px] right-[-60px] z-20"
                         />
 
-                        {/* Card 3: AI Product Manager */}
+                        {/* Card 3: AI Product Manager - Right Lower */}
                         <HeroCard
                             icon={<Settings size={48} />}
                             title="AI product manager"
                             subtitle="Analyze & predict"
                             number={3}
-                            className="bottom-34 -right-12 z-30"
+                            className="bottom-[30px] right-[30px] z-30"
                         />
 
-                        {/* Card 4: ML Ops */}
+                        {/* Card 4: ML Ops - Left Lower */}
                         <HeroCard
                             icon={<Brain size={48} />}
                             title="ML Ops"
                             subtitle="Model concepts"
                             number={4}
-                            className="bottom-0 left-1/2 -translate-x-1/2 z-40"
+                            className="bottom-[30px] left-[30px] z-40"
                         />
 
-                        {/* Card 5: Data Engineer */}
+                        {/* Card 5: Data Engineer - Left Upper */}
                         <HeroCard
                             icon={<Database size={48} />}
                             title="Data Engineer"
                             subtitle="Intelligence concepts"
                             number={5}
-                            className="top-65 -left-8 z-50"
+                            className="top-[190px] left-[-60px] z-50"
                         />
                     </div>
                 </FadeIn>
