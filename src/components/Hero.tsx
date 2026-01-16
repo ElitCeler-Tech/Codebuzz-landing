@@ -2,12 +2,10 @@
 
 import { Zap, Bot, Atom, Settings, Brain, Database } from "lucide-react";
 import HeroCard from "./ui/HeroCard";
-import { useState } from "react";
-import ConnectWithCodeBuzzModal from "./ConnectWithCodeBuzzModal";
+import Link from "next/link";
 import { FadeIn } from "./ui/animations";
 
 export default function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section
@@ -40,20 +38,23 @@ export default function Hero() {
 
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg text-white font-semibold shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-1"
-                style={{
-                  background:
-                    "linear-gradient(92.57deg, #FF830A -11.84%, #FF6700 100.76%)",
-                }}
-              >
-                <Zap size={20} fill="currentColor" />
-                Get Started For Free
-              </button>
-              <button className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-white text-[#ff830a] font-semibold border border-[#ff830a] hover:bg-orange-50 transition-colors shadow-sm">
-                Watch Demo
-              </button>
+              <Link href="/resources">
+                <button
+                  className="flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg text-white font-semibold shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-1"
+                  style={{
+                    background:
+                      "linear-gradient(92.57deg, #FF830A -11.84%, #FF6700 100.76%)",
+                  }}
+                >
+                  <Zap size={20} fill="currentColor" />
+                  Get Started For Free
+                </button>
+              </Link>
+              <Link href="/resources">
+                <button className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-white text-[#ff830a] font-semibold border border-[#ff830a] hover:bg-orange-50 transition-colors shadow-sm">
+                  Watch Demo
+                </button>
+              </Link>
             </div>
           </FadeIn>
         </div>
@@ -113,10 +114,6 @@ export default function Hero() {
         </FadeIn>
       </div>
 
-      <ConnectWithCodeBuzzModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
     </section>
   );
 }

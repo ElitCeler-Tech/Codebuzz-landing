@@ -4,10 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import ConnectWithCodeBuzzModal from "./ConnectWithCodeBuzzModal";
 
 export default function Navbar() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const pathname = usePathname();
 
@@ -47,15 +45,15 @@ export default function Navbar() {
                     <Link href="https://users.codebuzz.us" className="font-medium text-[#ff830a] hover:opacity-80 transition-opacity">
                         Sign In
                     </Link>
-                    <button
-                        onClick={() => setIsModalOpen(true)}
+                    <Link
+                        href="/resources"
                         className="px-6 py-2.5 rounded-md text-white font-medium shadow-lg hover:opacity-90 transition-opacity"
                         style={{
                             background: "linear-gradient(92.57deg, #FF830A -11.84%, #FF6700 100.76%)"
                         }}
                     >
                         Get Started Free
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -121,26 +119,20 @@ export default function Navbar() {
                         >
                             Sign In
                         </Link>
-                        <button
-                            onClick={() => {
-                                setIsMobileMenuOpen(false);
-                                setIsModalOpen(true);
-                            }}
+                        <Link
+                            href="/resources"
+                            onClick={() => setIsMobileMenuOpen(false)}
                             className="block w-full py-3 rounded-lg text-white font-medium shadow-lg hover:opacity-90 transition-opacity text-center"
                             style={{
                                 background: "linear-gradient(92.57deg, #FF830A -11.84%, #FF6700 100.76%)"
                             }}
                         >
                             Get Started Free
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
 
-            <ConnectWithCodeBuzzModal
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-            />
         </>
     );
 }

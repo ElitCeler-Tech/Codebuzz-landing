@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Zap } from "lucide-react";
-import ConnectWithCodeBuzzModal from "./ConnectWithCodeBuzzModal";
+import Link from "next/link";
 import { FadeIn } from "./ui/animations";
 
 export default function CTASection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section className="bg-white flex flex-col items-center">
@@ -32,20 +31,16 @@ export default function CTASection() {
         </FadeIn>
 
         <FadeIn delay={0.3} direction="up">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="bg-white text-[#ff830a] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base md:text-lg flex items-center gap-2 hover:bg-gray-100 transition-colors shadow-lg"
-          >
-            <Zap className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
-            Get Started Today
-          </button>
+          <Link href="/resources">
+            <button
+              className="bg-white text-[#ff830a] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base md:text-lg flex items-center gap-2 hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
+              Get Started Today
+            </button>
+          </Link>
         </FadeIn>
       </div>
-
-      <ConnectWithCodeBuzzModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
     </section>
   );
 }
