@@ -19,14 +19,14 @@ const testimonials: Testimonial[] = [
         role: "Software Designer",
         text: "Transitioning careers into tech and finding a platform that provided clarity was crucial. CodeBuzz guided me from basic to advanced concepts with clear lessons and assessments. The quizzes helped me validate what I learned instead of just watching videos.",
         bgColor: "bg-[#f0f4ff]", // Light blue-ish
-        avatar: "https://i.pravatar.cc/150?u=lauren",
+        avatar: "/reveiw/lauren.png",
     },
     {
         name: "Rishi Shah",
         role: "Software Engineer",
         text: "I started CodeBuzz with almost no technical background. The way courses are structured helped me understand concepts step by step without feeling overwhelmed. The dashboard clearly shows my progress, which kept me motivated to continue learning every day.",
         bgColor: "bg-[#fff9e6]", // Light yellow
-        avatar: "https://i.pravatar.cc/150?u=rishi",
+        avatar: "/reveiw/rishi.png",
     },
     {
         name: "Fiona Serre",
@@ -34,20 +34,6 @@ const testimonials: Testimonial[] = [
         text: "The live classes were extremely helpful because I could ask questions in real time. What I loved most was that every session was recorded, so I could revisit difficult topics later. This made learning flexible even with my busy schedule.",
         bgColor: "bg-[#e6f7eb]", // Light green
         avatar: "https://i.pravatar.cc/150?u=fiona",
-    },
-    {
-        name: "Aditya Singh",
-        role: "Lawyer",
-        text: "As a working professional, finding time to learn is hard. CodeBuzz allowed me to learn at my own pace, resume lessons instantly, and track exactly where I left off. The platform feels clean, focused, and built for serious learners.",
-        bgColor: "bg-[#f5f5f5]", // Light gray
-        avatar: "https://i.pravatar.cc/150?u=aditya",
-    },
-    {
-        name: "Ria Manek",
-        role: "Software Developer",
-        text: "CodeBuzz didn't just teach me — it built my confidence. The mix of video lessons, assessments, and progress tracking made learning purposeful. I now feel prepared to apply my skills in real projects.",
-        bgColor: "bg-[#f2f0ff]", // Light purple
-        avatar: "https://i.pravatar.cc/150?u=ria",
     },
     {
         name: "Jacob Jones",
@@ -61,14 +47,14 @@ const testimonials: Testimonial[] = [
         role: "Front-end Developer",
         text: "I appreciated the project-based approach. Instead of just learning syntax, I was building real applications. This portfolio-ready work helped me land my first junior developer role.",
         bgColor: "bg-[#f0f4ff]", // Light blue-ish
-        avatar: "https://i.pravatar.cc/150?u=esther",
+        avatar: "/reveiw/ester.png",
     },
     {
         name: "Kristin Watson",
         role: "UI Designer",
         text: "The UX/UI design track provided a comprehensive foundation. The instructors are industry experts who share practical insights that you don't find in textbooks. Highly recommended for aspiring designers.",
         bgColor: "bg-[#e6f7eb]", // Light green
-        avatar: "https://i.pravatar.cc/150?u=kristin",
+        avatar: "/reveiw/kristin.png",
     },
 ];
 

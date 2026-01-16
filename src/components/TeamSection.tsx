@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
     },
     {
         name: "Ravi Doddasomayajula",
-        role: "Tech Lead & Mentor\nSenior Software Engineer",
+        role: "Tech Lead & Mentor\nSenior Software Engineer\nLead Data Scientist with 8+ years of experience in financial anomaly detection and generative AI; MS (Georgia Tech), PhD (George Mason University).",
         bgColor: "bg-[#e8f5e9]", // Light green
         image: "/teams/Ravi_sir.jpeg",
     },
