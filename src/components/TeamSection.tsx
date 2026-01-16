@@ -57,7 +57,7 @@ export default function TeamSection() {
                 </div>
             </FadeIn>
 
-            <StaggerContainer staggerDelay={0.15} className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 md:gap-8 px-4 max-w-7xl w-full mb-8 md:mb-12">
+            <StaggerContainer staggerDelay={0.15} className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 md:gap-8 px-4 max-w-5xl w-full mb-8 md:mb-12">
                 {teamMembers.map((member, index) => (
                     <StaggerItem key={index} direction="up">
                         <div className="flex flex-col gap-4 group cursor-pointer w-full sm:w-56 md:w-72">
