@@ -6,42 +6,48 @@ import ResourceCard from "@/components/ResourceCard";
 import CTASection from "@/components/CTASection";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/animations";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
-// Mock data based on the image description
-const resources = [
-    {
-        id: 1,
-        title: "AI/ML Product Analysis",
-        image: "/courses/ds.png", // Using existing placeholder images
-    },
-    {
-        id: 2,
-        title: "Module 10 - Math For ML",
-        image: "/courses/html-css.png",
-    },
-    {
-        id: 3,
-        title: "Module 11 - Intro To ML And NN",
-        image: "/courses/ds.png",
-    },
-    {
-        id: 4,
-        title: "Module 13 - MI : Adv Supervised..",
-        image: "/courses/ds.png",
-    },
-    {
-        id: 5,
-        title: "Module 15 - MLOps",
-        image: "/courses/html-css.png",
-    },
-    {
-        id: 6,
-        title: "Module 16 : Neural Networks",
-        image: "/courses/ds.png",
-    },
-];
+interface Resource {
+    id: string;
+    courseId: string;
+    title: string;
+    description: string | null;
+    videoUrl: string;
+    thumbnailUrl: string | null;
+    duration: number;
+    createdAt: string;
+    updatedAt: string;
+}
+
+interface ApiResponse {
+    success: boolean;
+    message: string;
+    data: Resource[];
+}
 
 export default function ResourcesPage() {
+    const [resources, setResources] = useState<Resource[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchResources = async () => {
+            try {
+                const response = await fetch("https://apicb.codebuzz.us/api/resources");
+                const data: ApiResponse = await response.json();
+                if (data.success) {
+                    setResources(data.data);
+                }
+            } catch (error) {
+                console.error("Failed to fetch resources:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchResources();
+    }, []);
+
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
@@ -73,17 +79,28 @@ export default function ResourcesPage() {
 
             {/* Resources Grid */}
             <section className="w-full max-w-7xl mx-auto px-4 py-8 sm:py-12 md:py-16">
-                <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-                    {resources.map((resource) => (
-                        <StaggerItem key={resource.id} direction="up">
-                            <ResourceCard
-                                imageSrc={resource.image}
-                                title={resource.title}
-                                onViewMoreClick={() => { }}
-                            />
-                        </StaggerItem>
-                    ))}
-                </StaggerContainer>
+                {isLoading ? (
+                    <div className="flex justify-center py-20">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#ff830a]"></div>
+                    </div>
+                ) : (
+                    <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                        {resources.map((resource) => (
+                            <StaggerItem key={resource.id} direction="up">
+                                <ResourceCard
+                                    // Use API thumbnail or a default placeholder
+                                    imageSrc={resource.thumbnailUrl || "/courses/ds.png"}
+                                    title={resource.title}
+                                    onViewMoreClick={() => {
+                                        if (resource.videoUrl) {
+                                            window.open(resource.videoUrl, '_blank');
+                                        }
+                                    }}
+                                />
+                            </StaggerItem>
+                        ))}
+                    </StaggerContainer>
+                )}
             </section>
 
             <CTASection />

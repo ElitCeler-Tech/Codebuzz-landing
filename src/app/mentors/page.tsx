@@ -5,47 +5,46 @@ import Footer from "@/components/Footer";
 import MentorCard from "@/components/MentorCard";
 import CTASection from "@/components/CTASection";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/animations";
+import { useEffect, useState } from "react";
 
-// Mock data based on the provided image
-const mentors = [
-    {
-        id: 1,
-        name: "Saneeta Narrlla",
-        role: "Founder & Technologist, CodeBuzz",
-        description: "Data • Security • AI Education",
-        image: "/courses/ds.png", // Placeholder - User should replace with actual mentor images
-    },
-    {
-        id: 2,
-        name: "Siddharth Pothukuchi",
-        role: "AI / ML Engineer",
-        description: "IIT Bhilai & Purdue University Graduate",
-        image: "/courses/html-css.png", // Placeholder
-    },
-    {
-        id: 3,
-        name: "Ravi Doddasomayajula",
-        role: "Tech Lead & Mentor",
-        description: "Senior Software Engineer",
-        image: "/courses/ds.png", // Placeholder
-    },
-    {
-        id: 4,
-        name: "Dilip Yeluguri",
-        role: "Data and Finance",
-        description: "@CodeBuzz",
-        image: "/courses/html-css.png", // Placeholder
-    },
-    {
-        id: 5,
-        name: "Vijay chakilam",
-        role: "Founder@Kooper",
-        description: "University of Cincinnati MS. Quantitative Analysis",
-        image: "/courses/ds.png", // Placeholder
-    },
-];
+interface Mentor {
+    id: string;
+    name: string;
+    email: string;
+    courseExpertise: string[];
+    about: string;
+    role: string;
+    photoUrl: string;
+}
+
+interface ApiResponse {
+    success: boolean;
+    message: string;
+    data: Mentor[];
+}
 
 export default function MentorsPage() {
+    const [mentors, setMentors] = useState<Mentor[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchMentors = async () => {
+            try {
+                const response = await fetch("https://apicb.codebuzz.us/api/mentors");
+                const data: ApiResponse = await response.json();
+                if (data.success) {
+                    setMentors(data.data);
+                }
+            } catch (error) {
+                console.error("Failed to fetch mentors:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchMentors();
+    }, []);
+
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
@@ -71,18 +70,25 @@ export default function MentorsPage() {
 
             {/* Mentors Grid */}
             <section className="w-full max-w-7xl mx-auto px-4 py-8 sm:py-12 md:py-16">
-                <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-                    {mentors.map((mentor) => (
-                        <StaggerItem key={mentor.id} direction="up">
-                            <MentorCard
-                                imageSrc={mentor.image}
-                                name={mentor.name}
-                                role={mentor.role}
-                                description={mentor.description}
-                            />
-                        </StaggerItem>
-                    ))}
-                </StaggerContainer>
+                {isLoading ? (
+                    <div className="flex justify-center py-20">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#ff830a]"></div>
+                    </div>
+                ) : (
+                    <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+                        {mentors.map((mentor) => (
+                            <StaggerItem key={mentor.id} direction="up">
+                                <MentorCard
+                                    // Use API photoUrl or a default placeholder
+                                    imageSrc={mentor.photoUrl || "/courses/ds.png"}
+                                    name={mentor.name}
+                                    role={mentor.role}
+                                    description={mentor.about}
+                                />
+                            </StaggerItem>
+                        ))}
+                    </StaggerContainer>
+                )}
             </section>
 
             <CTASection />
