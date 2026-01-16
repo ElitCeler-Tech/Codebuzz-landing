@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, ArrowLeft, User } from "lucide-react";
+import { User } from "lucide-react";
 import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem } from "./ui/animations";
 
@@ -93,17 +93,7 @@ export default function TeamSection() {
                 ))}
             </StaggerContainer>
 
-            {/* Navigation Controls */}
-            <FadeIn delay={0.3} direction="up">
-                <div className="flex gap-4">
-                    <button className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#faeff6] flex items-center justify-center text-[#ff830a] hover:bg-gray-100 transition-colors">
-                        <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
-                    </button>
-                    <button className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#ff830a] flex items-center justify-center text-white hover:bg-[#e07208] transition-colors shadow-md">
-                        <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
-                    </button>
-                </div>
-            </FadeIn>
+
         </section>
     );
 }
