@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { MessageCircle, Users, MessageSquare } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "./ui/animations";
+import { MessageSquare } from "lucide-react";
+import { FadeIn, StaggerContainer } from "./ui/animations";
 
 export default function SupportSection() {
     return (

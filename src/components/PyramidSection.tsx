@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem } from "./ui/animations";
+import { FadeIn } from "./ui/animations";
 
 export default function PyramidSection() {
     return (

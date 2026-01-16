@@ -22,7 +22,7 @@ export default function Hero() {
               Everyone starts somewhere.
               <br className="hidden sm:block" />
               <span className="sm:hidden"> </span>
-              At CodeBuzz, we make sure you don't start alone.
+              At CodeBuzz, we make sure you don&apos;t start alone.
             </h1>
           </FadeIn>
           <FadeIn delay={0.2} direction="up">
@@ -32,7 +32,7 @@ export default function Hero() {
           </FadeIn>
           <FadeIn delay={0.3} direction="up">
             <p className="text-base sm:text-lg text-gray-600 mb-8 md:mb-10 font-poppins max-w-lg mx-auto lg:mx-0">
-              Learn, Experiment, and Deploy with Confidence. Let's get started.
+              Learn, Experiment, and Deploy with Confidence. Let&apos;s get started.
             </p>
           </FadeIn>
 
