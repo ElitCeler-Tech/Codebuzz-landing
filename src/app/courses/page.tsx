@@ -5,44 +5,44 @@ import Footer from "@/components/Footer";
 import CourseCard from "@/components/CourseCard";
 import ConnectWithCodeBuzzModal from "@/components/ConnectWithCodeBuzzModal";
 import CTASection from "@/components/CTASection";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/animations";
 
-const courses = [
-    {
-        id: 1,
-        title: "Intro To Data Structures - Learn From Shalie",
-        image: "/courses/ds.png",
-    },
-    {
-        id: 2,
-        title: "Intro To Html CSS - Learn From John",
-        image: "/courses/html-css.png",
-    },
-    {
-        id: 3,
-        title: "Intro To Data Structures - Learn From Shalie",
-        image: "/courses/ds.png",
-    },
-    {
-        id: 4,
-        title: "Intro To Data Structures - Learn From Shalie",
-        image: "/courses/ds.png",
-    },
-    {
-        id: 5,
-        title: "Intro To Html CSS - Learn From John",
-        image: "/courses/html-css.png",
-    },
-    {
-        id: 6,
-        title: "Intro To Data Structures - Learn From Shalie",
-        image: "/courses/ds.png",
-    },
-];
+interface Course {
+    id: string;
+    slug: string;
+    title: string;
+    description: string;
+    instructor: string;
+    students: number;
+    duration: string;
+    level: string;
+    thumbnail: string;
+    price: number;
+}
 
 export default function CoursesPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [courses, setCourses] = useState<Course[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch('https://apicb.codebuzz.us/api/courses');
+                const data = await response.json();
+                if (data.success && Array.isArray(data.data)) {
+                    setCourses(data.data);
+                }
+            } catch (error) {
+                console.error("Error fetching courses:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchCourses();
+    }, []);
 
     return (
         <main className="min-h-screen bg-white">
@@ -69,18 +69,24 @@ export default function CoursesPage() {
             </section>
 
             {/* Courses Grid */}
-            <section className="w-full max-w-7xl mx-auto px-4 py-8 sm:py-12 md:py-16">
-                <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-                    {courses.map((course) => (
-                        <StaggerItem key={course.id} direction="up">
-                            <CourseCard
-                                imageSrc={course.image}
-                                title={course.title}
-                                onContactClick={() => setIsModalOpen(true)}
-                            />
-                        </StaggerItem>
-                    ))}
-                </StaggerContainer>
+            <section className="w-full max-w-7xl mx-auto px-4 py-8 sm:py-12 md:py-16 min-h-[400px]">
+                {isLoading ? (
+                    <div className="flex justify-center items-center h-64">
+                        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#ff830a]"></div>
+                    </div>
+                ) : (
+                    <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                        {courses.map((course) => (
+                            <StaggerItem key={course.id} direction="up">
+                                <CourseCard
+                                    imageSrc={course.thumbnail}
+                                    title={course.title}
+                                    onContactClick={() => setIsModalOpen(true)}
+                                />
+                            </StaggerItem>
+                        ))}
+                    </StaggerContainer>
+                )}
             </section>
 
             <CTASection />
