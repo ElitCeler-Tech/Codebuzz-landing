@@ -17,15 +17,15 @@ const features = [
     title: "Smart Learning",
     highlight: "Dashboard",
     description:
-      "Track your courses, resume lessons instantly, and stay on top of your learning progress — all in one place.",
+      "Track your programs, resume lessons instantly, and stay on top of your learning progress — all in one place.",
     image: "/landing/landing-dashboard.png",
   },
   {
     id: 2,
     title: "Access to your",
-    highlight: "Courses with ease",
+    highlight: "Programs with ease",
     description:
-      "Access all your enrolled courses and continue learning from where you left off.",
+      "Access all your enrolled programs and continue learning from where you left off.",
     image: "/landing/dashboard2.png", // Reusing for consistent UI look as per request to use dashboard design
   },
   {
@@ -129,4 +129,3 @@ export default function FeaturesPage() {
     </main>
   );
 }
-
